@@ -1,0 +1,531 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    border-radius: 60px 60px 0 0;
+  }
+    .shopify-section--footer-center {
+        background-color: {{ section.settings.background }};
+    }
+    #footer-center{{ section.id }} {
+      {%- if section.settings.padding_desktop != blank -%}
+        padding: {{ section.settings.padding_desktop }};
+      {%- endif -%}
+
+      border-width: {{ section.settings.border_width }};
+      border-style: solid;
+      border-color: {{ section.settings.border_color }};
+
+    }
+    @media(max-width: 767px){
+        #footer-center{{ section.id }} {
+          {% if section.settings.padding_mobile != blank %}
+            padding: {{ section.settings.padding_mobile }};
+          {% endif %}
+        }
+    }
+    .footer-center-social a {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        text-align: center;
+        line-height: 1;
+        background-color: {{ section.settings.bg_social }};
+        border-radius: 2px;
+        color: {{ section.settings.color_social }};
+    }
+    .footer-center-social a:hover {
+      color: var(--g-main);
+    }
+    .footer-sub svg {
+        width: 20px;
+        height: 20px;
+    }
+    .footer-center-contact_icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgb(255,255,255,.1);
+      line-height: 56px;
+      transition: all .4s;
+      border-radius: 50%;
+      text-align: center;
+    }
+    .footer-center-contact_icon:hover {
+      border-color: var(--g-main);
+      background-color: var(--g-main);
+    }
+    .footer-center-contact__des {
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 600;
+    }
+    .footer-center-contact__content {
+      flex: 1;
+    }
+    .footer-sub .list-inline-item:not(:last-child) {
+      margin-right: 0;
+    }
+    .footer-sub .social-icons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-sub .row {
+      gap: 30px 0;
+    }
+    @media (max-width: 991px) {
+      .footer-center-contact.text-right {
+        text-align: center !important;
+      }
+    }
+</style>
+
+<div class="{{ section.settings.setwidth }}">
+    <div id="footer-center{{ section.id }}" class="custom-{{ section.id }} footer-sub">
+        <div class="row">
+            {%- for block in section.blocks -%}
+            <style>
+              {% if block.settings.width_mobile != blank %}
+              .custom-{{ section.id }} #block-{{ block.id }}.col-custom-sm {
+                width: {{ block.settings.width_mobile }}%;
+                padding-left: var(--g-hgutter);
+                padding-right: var(--g-hgutter);
+              }
+              {% endif %}
+              {% if block.settings.width_tablet_md != blank %}
+              @media (min-width: 768px) {
+                .custom-{{ section.id }} #block-{{ block.id }}.col-custom-md {
+                  width: {{ block.settings.width_tablet_md }}%;
+                }
+              }
+              {% endif %}
+              {% if block.settings.width_tablet_lg != blank %}
+              @media (min-width: 992px) {
+                .custom-{{ section.id }} #block-{{ block.id }}.col-custom-lg {
+                  width: {{ block.settings.width_tablet_lg }}%;
+                }
+              }
+              {% endif %}
+              {% if block.settings.width_desktop != blank %}
+              @media (min-width: 1200px) {
+                .custom-{{ section.id }} #block-{{ block.id }}.col-custom-xl {
+                  width: {{ block.settings.width_desktop }}%;
+                }
+              }
+              {% endif %}
+            </style>
+                <div id="block-{{ block.id }}" class="col-custom-xl col-custom-lg col-custom-md col-custom-sm">
+                    {%- case block.type -%}
+                        {%- when 'social' -%}
+                            <div class="footer-center-social text-md-{{ block.settings.text_align }} text-center">
+                              <div style="gap: 20px;" class="d-flex flex-md-row flex-column align-items-md-start align-items-center">
+                                {% if  block.settings.icon != blank %}
+                                  <div class="footer-center-contact_icon">
+                                    {{ block.settings.icon }}
+                                  </div>
+                                {% endif %}
+                                <div class="site-footer__section">
+                                    {%- if block.settings.title != blank -%}
+                                    <h4 style="color: {{ section.settings.text_color }}" class="mini-text mb-10">{{ block.settings.title }}</h4>
+                                    {%- endif -%}
+                                    <div class="site-footer__list site-footer-block">
+                                      {%- render 'block-social' -%}
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+                        {%- when 'contact' -%}
+                          <style>
+                            .footer-center-contact__title {
+                              color: {{ section.settings.text_color }};
+                            }
+                          </style>
+                            <div style="color: {{ section.settings.text_color }}" class="footer-center-contact text-md-{{ block.settings.text_align }} text-center">
+                              <div style="gap: 20px;" class="d-flex flex-md-row flex-column align-items-md-start align-items-center">
+                                {% if  block.settings.icon != blank %}
+                                  <div class="footer-center-contact_icon">
+                                    {{ block.settings.icon }}
+                                  </div>
+                                {% endif %}
+                                <div class="footer-center-contact__content">
+                                  {% if  block.settings.title != blank %}
+                                    <div class="footer-center-contact__title mini-text mb-10">
+                                      {{ block.settings.title }}
+                                    </div>
+                                  {% endif %}
+                                  {% if  block.settings.des != blank %}
+                                  <div class="footer-center-contact__des">
+                                    {{ block.settings.des }}
+                                  </div>
+                                  {% endif %}
+                                </div>
+                              </div>
+                            </div>
+
+                        {%- when 'logo' -%}
+                          <div class="text-md-{{ block.settings.text_align }} text-center">
+                            {%- if block.settings.logofooter != blank -%}
+                            {%- assign logo = block.settings.logofooter -%}
+                              <div class="image-content__image-container logofooter mx-md-0 mx-auto" style="width: {{ block.settings.widthlogofooter }}px;">
+                                <a class="image-content__image-wrapper" href="/" style="padding-top:{{ 1 | divided_by: logo.aspect_ratio | times: 100 }}%;" >
+                                  {%- assign img_url = logo | image_url: width: 1 | replace: 'width=1', 'width={width}' -%}
+                                  <img 
+                                  class="lazyload transition img-logo" 
+                                  src="{{ logo | image_url: width: 1, height: 1 }}"
+                                  data-srcset="{{ img_url }}"
+                                  data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                                  data-aspectratio="{{ logo.aspect_ratio }}"
+                                  data-sizes="auto"
+                                  loading="lazy" alt=""
+                                  width="{{ logo.width }}"
+                                  height="{{ logo.height }}"/>
+                                </a>
+                              </div>
+                            {%- endif -%}
+                          </div>
+
+                    {%- endcase -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer Sub",
+  "class": "shopify-section--footer-center",
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social accounts",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Settings width column"
+        },
+        {
+          "type": "text",
+          "id": "width_desktop",
+          "label": "Width desktop",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_lg",
+          "label": "Width tablet large",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_md",
+          "label": "Width tablet",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_mobile",
+          "label": "Width mobile",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "100"
+        },
+        {
+          "type": "liquid",
+          "id": "icon",
+          "label": "Icon / HTML",
+          "default": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Follow us"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text align",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Container width",
+          "default": "25%",
+          "options": [
+            {
+              "value": "16%",
+              "label": "16%"
+            },
+            {
+              "value": "20%",
+              "label": "20%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Settings width column"
+        },
+        {
+          "type": "text",
+          "id": "width_desktop",
+          "label": "Width desktop",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_lg",
+          "label": "Width tablet large",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_md",
+          "label": "Width tablet",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_mobile",
+          "label": "Width mobile",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "100"
+        },
+        {
+          "type": "liquid",
+          "id": "icon",
+          "label": "Icon / HTML",
+          "default": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Contact us"
+        },
+        {
+          "type": "text",
+          "id": "des",
+          "label": "Description",
+          "default": "Description"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text align",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Settings width column"
+        },
+        {
+          "type": "text",
+          "id": "width_desktop",
+          "label": "Width desktop",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_lg",
+          "label": "Width tablet large",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_tablet_md",
+          "label": "Width tablet",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "width_mobile",
+          "label": "Width mobile",
+          "info": "Unit % , Ex: 10,20,30,...",
+          "default": "100"
+        },
+        {
+          "type": "image_picker",
+          "id": "logofooter",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "widthlogofooter",
+          "min": 0,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "label": "Width Image",
+          "default": 130
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text align",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "default": "#202020",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#939393",
+      "label": "Color Text"
+    },
+    {
+      "type": "color",
+      "id": "bg_social",
+      "default": "#2d2d2d",
+      "label": "Background Social"
+    },
+    {
+      "type": "color",
+      "id": "color_social",
+      "default": "#8B8B8B",
+      "label": "Color Social"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color"
+    },
+    {
+      "type": "text",
+      "id": "border_width",
+      "label": "Border width",
+      "info": "Ex: 1px 1px 1px 1px , top right bot left"
+    },
+    {
+      "type": "text",
+      "id": "padding_desktop",
+      "label": "Padding Desktop",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "padding_mobile",
+      "label": "Padding Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    }
+  ]
+}
+{% endschema %}

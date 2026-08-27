@@ -1,0 +1,332 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "newsletter-footer": {
+      "type": "newsletter-footer",
+      "custom_css": [],
+      "settings": {
+        "enable_newletter_footer": true,
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "rgba(0,0,0,0)",
+        "newletter_color": "#000000",
+        "border_input": "#e6e6e6",
+        "bg_input": "rgba(0,0,0,0)",
+        "color_input": "#555555",
+        "color_btn": "#000000",
+        "bg_colorbtn": "#ffc122",
+        "color_btn_hover": "#ffffff",
+        "bg_colorbtn_hover": "#4158f2",
+        "e_size": "cover",
+        "e_repeat": "no-repeat",
+        "title_top": "",
+        "title": "Suscríbete",
+        "des": "",
+        "btn_newsletter": "subcribe",
+        "html_left": true,
+        "html_left_block": "<sp style=\"\n    color: var(--g-main);\n    text-transform: capitalize;\n    margin-bottom: 8px;\n    display: block;\n    font-weight: 500;\n\" class=\"subtop\">\nRecibe las mejores promociones\n</sp>\n\n<h5>\nIngresa tu What's App, o correo electrónico\n<br>\ny recibe las mejores promociones y actualizaciones\n<br>\nde todos nuestros catálogos\n</h5>",
+        "paddingsection": "40px 0",
+        "paddingtablet": "",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "footer_center_n33j9R": {
+      "type": "footer-center",
+      "blocks": {
+        "logo_YnXFrz": {
+          "type": "logo",
+          "settings": {
+            "width_desktop": "24.3",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "widthlogofooter": 180,
+            "text_align": "left"
+          }
+        },
+        "contact_MwpMbW": {
+          "type": "contact",
+          "settings": {
+            "width_desktop": "23",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n<g>\n<path d=\"M14.8018 19.9997C8.02599 20.2288 -4.18066 8.1205 1.48683 1.5555L2.44517 0.722164C2.93027 0.253218 3.58051 -0.00585505 4.25519 0.00100711C4.92986 0.00786927 5.5747 0.280115 6.05016 0.75883C6.07586 0.785001 6.0998 0.812839 6.12183 0.842164L7.62183 2.79133C8.07768 3.27369 8.33096 3.91265 8.32941 4.57633C8.32786 5.24001 8.07159 5.87777 7.61349 6.358L6.64849 7.57133C7.18276 8.86889 7.96801 10.0482 8.95918 11.0415C9.95035 12.0348 11.1279 12.8226 12.4243 13.3597L13.6443 12.3888C14.1308 11.942 14.767 11.6937 15.4275 11.6928C16.088 11.6919 16.7249 11.9384 17.2127 12.3838L19.1626 13.8838C19.1918 13.9058 19.2196 13.9295 19.246 13.9547C19.7269 14.44 19.9967 15.0956 19.9967 15.7788C19.9967 16.4621 19.7269 17.1177 19.246 17.603L18.4868 18.478C18.0053 18.9648 17.4311 19.3502 16.7982 19.6116C16.1653 19.8729 15.4865 20.0049 14.8018 19.9997ZM4.226 1.66633C4.10624 1.66624 3.98764 1.68974 3.87697 1.7355C3.7663 1.78125 3.66573 1.84836 3.581 1.933L2.62183 2.76633C-2.08316 8.423 12.3143 22.0188 17.2668 17.3397L18.0268 16.4638C18.1172 16.3834 18.1907 16.2859 18.2432 16.177C18.2957 16.068 18.3261 15.9498 18.3327 15.829C18.3393 15.7082 18.3219 15.5874 18.2816 15.4733C18.2412 15.3593 18.1787 15.2544 18.0976 15.1647L16.1585 13.6755C16.1288 13.6536 16.1009 13.6294 16.0752 13.603C15.9013 13.4373 15.6703 13.3449 15.4302 13.3449C15.19 13.3449 14.959 13.4373 14.7852 13.603C14.763 13.6254 14.7397 13.6465 14.7152 13.6663L13.0835 14.9663C12.9702 15.0565 12.8354 15.1156 12.6924 15.1378C12.5493 15.16 12.4029 15.1446 12.2677 15.093C10.5878 14.4672 9.062 13.4876 7.79374 12.2206C6.52549 10.9537 5.54436 9.42892 4.91683 7.74967C4.86128 7.61247 4.84326 7.46296 4.86465 7.3165C4.88603 7.17004 4.94604 7.03191 5.0385 6.91633L6.3335 5.28633C6.35276 5.26164 6.37364 5.23826 6.396 5.21633C6.56622 5.04465 6.66173 4.81268 6.66173 4.57091C6.66173 4.32915 6.56622 4.09718 6.396 3.9255C6.37002 3.89958 6.34606 3.87172 6.32433 3.84216L4.8385 1.9055C4.67061 1.7538 4.45227 1.67003 4.226 1.6705V1.66633ZM18.8035 10.4797C22.9618 4.35883 15.6368 -2.95867 9.52266 1.19883C9.43046 1.26039 9.35146 1.33973 9.29031 1.4322C9.22915 1.52467 9.18706 1.62842 9.1665 1.73736C9.14595 1.84631 9.14733 1.95825 9.17058 2.06665C9.19383 2.17505 9.23848 2.27773 9.30191 2.36865C9.36534 2.45958 9.44627 2.53694 9.53997 2.5962C9.63367 2.65545 9.73825 2.69542 9.84759 2.71375C9.95693 2.73208 10.0688 2.72841 10.1767 2.70296C10.2846 2.6775 10.3864 2.63077 10.476 2.5655C15.0377 -0.567003 20.5676 4.96883 17.4368 9.52716C17.3701 9.6167 17.3221 9.71873 17.2956 9.82718C17.2691 9.93563 17.2647 10.0483 17.2826 10.1585C17.3005 10.2687 17.3404 10.3742 17.3998 10.4687C17.4593 10.5632 17.5371 10.6447 17.6287 10.7086C17.7203 10.7724 17.8238 10.8172 17.933 10.8403C18.0422 10.8633 18.155 10.8642 18.2645 10.8429C18.3741 10.8215 18.4783 10.7783 18.5709 10.716C18.6635 10.6536 18.7426 10.5732 18.8035 10.4797ZM15.5885 8.9255C15.7447 8.76923 15.8325 8.5573 15.8325 8.33633C15.8325 8.11536 15.7447 7.90344 15.5885 7.74716L14.1668 6.32466V4.16633C14.1668 3.94532 14.079 3.73336 13.9227 3.57708C13.7665 3.42079 13.5545 3.333 13.3335 3.333C13.1125 3.333 12.9005 3.42079 12.7442 3.57708C12.588 3.73336 12.5002 3.94532 12.5002 4.16633V6.66633C12.5002 6.88733 12.588 7.09925 12.7443 7.2555L14.411 8.92216C14.5673 9.07839 14.7792 9.16615 15.0002 9.16615C15.2211 9.16615 15.433 9.07839 15.5893 8.92216L15.5885 8.9255Z\" fill=\"white\"/>\n</g>\n<defs>\n<clipPath id=\"clip0_195_455\">\n<rect width=\"20\" height=\"20\" fill=\"white\"/>\n</clipPath>\n</defs>\n</svg>",
+            "title": "Hotline Order",
+            "des": "+1890 123 456",
+            "text_align": "left"
+          }
+        },
+        "contact_AimAjp": {
+          "type": "contact",
+          "settings": {
+            "width_desktop": "30.6",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.63224 2.5H14.3677C15.0385 2.49999 15.5922 2.49998 16.0432 2.53683C16.5116 2.5751 16.9422 2.65724 17.3466 2.86331C17.9738 3.18289 18.4838 3.69283 18.8033 4.32003C19.0022 4.71032 19.0857 5.12495 19.1256 5.57442C19.1702 5.71059 19.178 5.85421 19.1515 5.99133C19.1667 6.36643 19.1667 6.80029 19.1667 7.2989V12.7011C19.1667 13.3719 19.1667 13.9255 19.1298 14.3765C19.0916 14.8449 19.0094 15.2755 18.8033 15.68C18.4838 16.3072 17.9738 16.8171 17.3466 17.1367C16.9422 17.3428 16.5116 17.4249 16.0432 17.4632C15.5922 17.5 15.0386 17.5 14.3678 17.5H5.63222C4.96142 17.5 4.40779 17.5 3.9568 17.4632C3.48839 17.4249 3.0578 17.3428 2.65336 17.1367C2.02615 16.8171 1.51621 16.3072 1.19664 15.68C0.990559 15.2755 0.908422 14.8449 0.870151 14.3765C0.833304 13.9255 0.833312 13.3719 0.833323 12.7011V7.29892C0.833315 6.80031 0.833308 6.36643 0.848437 5.99133C0.821974 5.85421 0.829785 5.71058 0.874336 5.57441C0.914327 5.12494 0.997775 4.71032 1.19664 4.32003C1.51621 3.69283 2.02615 3.18289 2.65336 2.86331C3.0578 2.65724 3.48839 2.5751 3.9568 2.53683C4.4078 2.49998 4.96143 2.49999 5.63224 2.5ZM2.49999 7.43388V12.6667C2.49999 12.986 2.50012 13.2596 2.50301 13.498L6.28414 10.0828L2.49999 7.43388ZM8.08205 9.3069L2.56896 5.44774C2.59873 5.2751 2.63747 5.16339 2.68165 5.07668C2.84143 4.76308 3.0964 4.50811 3.41001 4.34832C3.54034 4.28192 3.72718 4.22781 4.09252 4.19796C4.4676 4.16732 4.95284 4.16667 5.66666 4.16667H14.3333C15.0471 4.16667 15.5324 4.16732 15.9075 4.19796C16.2728 4.22781 16.4596 4.28192 16.59 4.34832C16.9036 4.50811 17.1585 4.76308 17.3183 5.07668C17.3625 5.16339 17.4012 5.2751 17.431 5.44774L11.918 9.30688C11.9083 9.31333 11.8988 9.32 11.8894 9.32688L11.0513 9.91351C10.4439 10.3387 10.3152 10.4125 10.2015 10.4408C10.0692 10.4738 9.93078 10.4738 9.79843 10.4408C9.68479 10.4125 9.55609 10.3387 8.94864 9.91351L8.11058 9.32687C8.10118 9.31999 8.09167 9.31333 8.08205 9.3069ZM7.68498 11.0634L2.9676 15.3243C3.09512 15.4564 3.24439 15.5673 3.41001 15.6517C3.54034 15.7181 3.72718 15.7722 4.09252 15.802C4.4676 15.8327 4.95284 15.8333 5.66666 15.8333H14.3333C15.0471 15.8333 15.5324 15.8327 15.9075 15.802C16.2728 15.7722 16.4596 15.7181 16.59 15.6517C16.7556 15.5673 16.9049 15.4564 17.0324 15.3243L12.315 11.0634L12.0071 11.2789C11.9748 11.3015 11.9427 11.324 11.911 11.3463C11.4571 11.665 11.0586 11.9449 10.6047 12.058C10.2076 12.157 9.79236 12.157 9.39532 12.058C8.94141 11.9449 8.54287 11.665 8.08899 11.3463C8.05724 11.324 8.02521 11.3015 7.99287 11.2789L7.68498 11.0634ZM13.7158 10.0828L17.497 13.498C17.4999 13.2596 17.5 12.986 17.5 12.6667V7.43388L13.7158 10.0828Z\" fill=\"white\"/>\n</svg>",
+            "title": "Email Us",
+            "des": "support@example.com",
+            "text_align": "left"
+          }
+        },
+        "social_LjUzLE": {
+          "type": "social",
+          "settings": {
+            "width_desktop": "22.1",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.0004 2.92931C11.953 0.976689 15.1188 0.976688 17.0714 2.92931C19.0241 4.88193 19.0241 8.04776 17.0714 10.0004L15.8929 11.1789C15.5675 11.5043 15.0399 11.5043 14.7144 11.1789C14.389 10.8535 14.389 10.3258 14.7144 10.0004L15.8929 8.82187C17.1947 7.52012 17.1947 5.40957 15.8929 4.10782C14.5912 2.80607 12.4806 2.80607 11.1789 4.10782L10.0004 5.28633C9.67494 5.61177 9.1473 5.61177 8.82187 5.28633C8.49643 4.9609 8.49643 4.43326 8.82187 4.10782L10.0004 2.92931ZM13.5063 6.49444C13.8317 6.81987 13.8317 7.34751 13.5063 7.67295L7.67297 13.5063C7.34753 13.8317 6.81989 13.8317 6.49446 13.5063C6.16902 13.1808 6.16902 12.6532 6.49446 12.3278L12.3278 6.49444C12.6532 6.169 13.1809 6.169 13.5063 6.49444ZM5.28633 8.82187C5.61177 9.1473 5.61177 9.67494 5.28633 10.0004L4.10782 11.1789C2.80607 12.4806 2.80607 14.5912 4.10782 15.8929C5.40957 17.1947 7.52012 17.1947 8.82187 15.8929L10.0004 14.7144C10.3258 14.389 10.8535 14.389 11.1789 14.7144C11.5043 15.0399 11.5043 15.5675 11.1789 15.8929L10.0004 17.0714C8.04776 19.0241 4.88193 19.0241 2.92931 17.0714C0.976688 15.1188 0.976689 11.953 2.92931 10.0004L4.10782 8.82187C4.43326 8.49643 4.9609 8.49643 5.28633 8.82187Z\" fill=\"white\"/>\n</svg>",
+            "title": "Follow Us",
+            "text_align": "left",
+            "width": "25%"
+          }
+        }
+      },
+      "block_order": [
+        "logo_YnXFrz",
+        "contact_MwpMbW",
+        "contact_AimAjp",
+        "social_LjUzLE"
+      ],
+      "disabled": true,
+      "settings": {
+        "setwidth": "container",
+        "background": "#000000",
+        "text_color": "#ffffff",
+        "bg_social": "rgba(0,0,0,0)",
+        "color_social": "#ffffff",
+        "border_color": "",
+        "border_width": "1px 0 0",
+        "padding_desktop": "80px 0",
+        "padding_mobile": "40px 0 20px"
+      }
+    },
+    "line_khTdda": {
+      "type": "line",
+      "settings": {
+        "animation": "fade",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "",
+        "bgsection": "#ffffff",
+        "setwidth": "full",
+        "bgborder": "#e6e6e6",
+        "overlay_opacity": 10,
+        "wborder": "1px"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_Pkwd7n": {
+          "type": "text",
+          "settings": {
+            "width_desktop": "25",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "widthlogofooter": 180,
+            "title": "",
+            "text": "<h6>\nResolvemos tus dudas\n</h6>\n<h4 style=\"\n    margin: 21px 0 23px;\n    color: #F14141;\n\">\n+52 (55) 2233 0960\n</h4>\n<sp style=\"color: #999;\">\nLunes-Viernes: 7:00am - 6:45pm\n<br>\nSábado: 7:00am - 12:45pm\n</sp>\n<sp style=\"\n    font-size: 16px;\n    line-height: 22px;\n    display: block;\n    color: #000;\n    margin-top: 11px;\n\">\ncontacto@miyali.com.mx\n</sp>",
+            "social_facebook_link": "",
+            "social_twitter_link": "",
+            "social_pinterest_link": "",
+            "social_instagram_link": "",
+            "social_tumblr_link": "",
+            "social_snapchat_link": "",
+            "social_youtube_link": "",
+            "social_vimeo_link": "",
+            "social_tiktok_link": "",
+            "padding_item": "0px 0px 0px 0px",
+            "border_width": "0px 0px 0px 0px",
+            "footer_align_title": "left"
+          }
+        },
+        "1562342622030": {
+          "type": "menu",
+          "settings": {
+            "width_desktop": "18",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "link_list": "nuestro-sitio",
+            "padding_item": "",
+            "border_width": "0",
+            "footer_align_title": "left"
+          }
+        },
+        "menu_TzFbG9": {
+          "type": "menu",
+          "settings": {
+            "width_desktop": "18",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "link_list": "cat-logos-recientes",
+            "padding_item": "",
+            "border_width": "0",
+            "footer_align_title": "left"
+          }
+        },
+        "menu_MFWaAj": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "width_desktop": "18",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "link_list": "",
+            "padding_item": "",
+            "border_width": "0px 0px 0px 0px",
+            "footer_align_title": "left"
+          }
+        },
+        "text_qLEfVy": {
+          "type": "text",
+          "settings": {
+            "width_desktop": "21",
+            "width_tablet_lg": "50",
+            "width_tablet_md": "50",
+            "width_mobile": "100",
+            "widthlogofooter": 130,
+            "title": "",
+            "text": "<div class=\"d-flex gap-4\">\n<img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/0698/6530/8229/files/clarity_chat-bubble-outline-badged.png?v=1765594308\" loading=\"lazy\" style=\"\n    width: 48px;\n    height: 48px;\n\">\n<div style=\"\n    flex: 1;\n\">\n<h6 style=\"font-size: 18px;color:var(--g-main-2)\" class=\"h6 mb-10\">\nComentarios\n</h6>\n<sp style=\"color: #999;\">\nSus comentarios son de\n<br>\nayuda, para mejorar\n<br>\nnuestro servicio.\n</sp>\n<a class=\"d-block mt-3 btn-underline\" href=\"#\">\nEnviar comentario\n<span class=\"icon-arrow-custom\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6\" height=\"10\" viewbox=\"0 0 6 10\" fill=\"none\">\n        <path d=\"M-3.71432e-07 1.50262L3.22805 5L-6.56816e-08 8.49738L1.38663 10L6 5L1.38663 -6.06113e-08L-3.71432e-07 1.50262Z\" fill=\"currentColor\"></path>\n    </svg>\n</span>\n</a>\n</div>\n</div>\n\n<img alt=\"\" class=\"d-xl-block d-none\" src=\"https://cdn.shopify.com/s/files/1/0656/0985/9170/files/1_1.png?v=1767716552\" loading=\"lazy\" style=\"\n    position: absolute;\n    top: -100px;\n    right: 0;\n    z-index: 1;\n\">",
+            "social_facebook_link": "#",
+            "social_twitter_link": "#",
+            "social_pinterest_link": "#",
+            "social_instagram_link": "#",
+            "social_tumblr_link": "",
+            "social_snapchat_link": "",
+            "social_youtube_link": "",
+            "social_vimeo_link": "",
+            "social_tiktok_link": "",
+            "padding_item": "0px 0px 0px 0px",
+            "border_width": "0px 0px 0px 0px",
+            "footer_align_title": "left"
+          }
+        }
+      },
+      "block_order": [
+        "text_Pkwd7n",
+        "1562342622030",
+        "menu_TzFbG9",
+        "menu_MFWaAj",
+        "text_qLEfVy"
+      ],
+      "custom_css": [
+        "@media (min-width: 1200px) {.social-text {padding-left: 70px; } .footer-center {position: relative; }}"
+      ],
+      "settings": {
+        "setwidth": "container",
+        "background": "#ffffff",
+        "border_headfooter": "rgba(0,0,0,0)",
+        "border-copryright": "#ffffff1a",
+        "text": "#555555",
+        "text_hover": "#F24141",
+        "title": "#000000",
+        "color_social": "#999999",
+        "bg_social": "",
+        "color_social_hover": "#4158f2",
+        "bg_social_hover": "",
+        "enable_border": false,
+        "footer_font_family": "--g-font-1",
+        "footer_font_size_title": 12,
+        "footer_font_weight": "900",
+        "footer_spacing": "0",
+        "footer_typetext": "uppercase",
+        "acc_mobile": true,
+        "show_copyright": false,
+        "show_footer_left": false,
+        "widthlogofooter": 190,
+        "des_footer": "Autozpro was established in 1983 to cater to the large \n<br>\nautomotive market place in the world. And within a short\n<br>\n period of time we’ve established ourselves as the #1 online\n<br>\n automotive and motorcycle parts store.",
+        "des_footer_2": "<div class=\"d-flex gap-4\" style=\"\n    padding: 27px 0 0 40px;\n\">\n<img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/0698/6530/8229/files/clarity_chat-bubble-outline-badged.png?v=1765594308\" loading=\"lazy\" style=\"\n    width: 48px;\n    height: 48px;\n\">\n<div style=\"\n    flex: 1;\n\">\n<h6 style=\"color:var(--g-main-2)\" class=\"h6 mb-10\">\nFeedback\n</h6>\nYour comments help us \n<br>\nimprove our website\n<a class=\"d-block mt-3 btn-underline btn-underline-white\" href=\"#\">\nsend us your feedback\n<span class=\"icon-arrow-custom\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"6\" height=\"10\" viewBox=\"0 0 6 10\" fill=\"none\">\n        <path d=\"M-3.71432e-07 1.50262L3.22805 5L-6.56816e-08 8.49738L1.38663 10L6 5L1.38663 -6.06113e-08L-3.71432e-07 1.50262Z\" fill=\"currentColor\"></path>\n    </svg>\n</span>\n</a>\n</div>\n</div>",
+        "e_ft_currency": false,
+        "enable_image": true,
+        "enable_name": true,
+        "enable_language_selector": false,
+        "payment_info": "img",
+        "copyright": false,
+        "customcopyright": "Copyright © 2024 Axetor. All rights reserved",
+        "padding_top": 52,
+        "padding_bottom": 24,
+        "m_padding_top": 40,
+        "m_padding_bottom": 20
+      }
+    },
+    "line_eE4GGp": {
+      "type": "line",
+      "settings": {
+        "animation": "fade",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "",
+        "bgsection": "#ffffff",
+        "setwidth": "container",
+        "bgborder": "#e6e6e6",
+        "overlay_opacity": 10,
+        "wborder": "1px"
+      }
+    },
+    "footer_copyright_DUiJXk": {
+      "type": "footer-copyright",
+      "blocks": {
+        "text_jJMM98": {
+          "type": "text",
+          "settings": {
+            "customcopyright": "<p>Copyright © 2026 Miyali Autopartes. Derechos reservados Desarrollado x PRO-TIC</p>",
+            "text_align": "left",
+            "width": "50%"
+          }
+        },
+        "payment_m9qNdi": {
+          "type": "payment",
+          "settings": {
+            "text": "",
+            "text_align": "right",
+            "width": "50%"
+          }
+        }
+      },
+      "block_order": [
+        "text_jJMM98",
+        "payment_m9qNdi"
+      ],
+      "settings": {
+        "setwidth": "container",
+        "background": "#ffffff",
+        "border_color": "",
+        "color_heading": "#000000",
+        "color_text": "#999999",
+        "border_width": "0",
+        "padding_desktop": "29px 0px 37px 0px",
+        "padding_mobile": "29px 0px 37px 0px"
+      }
+    }
+  },
+  "order": [
+    "newsletter-footer",
+    "footer_center_n33j9R",
+    "line_khTdda",
+    "footer",
+    "line_eE4GGp",
+    "footer_copyright_DUiJXk"
+  ]
+}

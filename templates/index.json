@@ -1,0 +1,842 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "service_qTMLfj": {
+      "type": "service",
+      "blocks": {
+        "service_tT6ejT": {
+          "type": "service",
+          "settings": {
+            "paddingbox": "0px 0px 0px 0px",
+            "border_width": "",
+            "bgblock": "#ffffff",
+            "title": "Productos",
+            "description": "EL mejor surtido",
+            "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/piezas-de-automovil.jpg?v=1785540021\">"
+          }
+        },
+        "service_EPmp9V": {
+          "type": "service",
+          "settings": {
+            "paddingbox": "0px 0px 0px 0px",
+            "border_width": "",
+            "bgblock": "#ffffff",
+            "title": "Costo-Beneficio",
+            "description": "Los mejores precios",
+            "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/dollar.jpg?v=1785540951\">"
+          }
+        },
+        "service_zX3Mtq": {
+          "type": "service",
+          "settings": {
+            "paddingbox": "0px 0px 0px 0px",
+            "border_width": "",
+            "bgblock": "#ffffff",
+            "title": "Marcas",
+            "description": "Amplia variedad",
+            "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/engrane.jpg?v=1785542782\">"
+          }
+        },
+        "service_nYkwkw": {
+          "type": "service",
+          "settings": {
+            "paddingbox": "0px 0px 0px 0px",
+            "border_width": "",
+            "bgblock": "#ffffff",
+            "title": "Atención",
+            "description": "El cliente es primero",
+            "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/servicio-al-cliente.jpg?v=1785541151\">"
+          }
+        },
+        "service_Hn4MXw": {
+          "type": "service",
+          "settings": {
+            "paddingbox": "0px 0px 0px 0px",
+            "border_width": "",
+            "bgblock": "#ffffff",
+            "title": "Calidad",
+            "description": "Los mejores productos",
+            "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/insignia-de-la-cinta.jpg?v=1785454047%0A>\">"
+          }
+        }
+      },
+      "block_order": [
+        "service_tT6ejT",
+        "service_EPmp9V",
+        "service_zX3Mtq",
+        "service_nYkwkw",
+        "service_Hn4MXw"
+      ],
+      "name": "Services",
+      "settings": {
+        "animation": "fade-right",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "title_sp": "",
+        "des": "",
+        "align-heading": "center",
+        "bg_box": "rgba(0,0,0,0)",
+        "iconcolor": "#222222",
+        "titlecolor": "#000000",
+        "subcolor": "#999999",
+        "size": 0,
+        "service_heading": "h6",
+        "layout": "style-2",
+        "enable_carousel": false,
+        "arrows": false,
+        "draggable": true,
+        "dots": false,
+        "infinite": true,
+        "paddingsection": "50px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "20px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "grid_banner_k3wbkE": {
+      "type": "grid-banner",
+      "blocks": {
+        "banner_nYyCJQ": {
+          "type": "banner",
+          "settings": {
+            "width": "6",
+            "subtitle": "<sp style=\"font-weight:800;\">\nLo mas vendido\n</sp>",
+            "color_subtitle": "#4158f2",
+            "title": "Calidad,\n<br>\nInovacion",
+            "color_heading": "#000000",
+            "size_text": "h2",
+            "description": "Conoce nuestras promociones",
+            "bg_color": "#000000",
+            "colordef": "#000000",
+            "opacity_bg": 0,
+            "style_btn": "btn-underline btn-underline-white",
+            "size_btn": "",
+            "button_text": "",
+            "button_link": "",
+            "vertical": "mid",
+            "horizontal": "left",
+            "text_align": "left"
+          }
+        },
+        "banner_FajybQ": {
+          "type": "banner",
+          "settings": {
+            "width": "6",
+            "subtitle": "<sp style=\"font-weight:800;\">\nvariedad de marcas\n</sp>",
+            "color_subtitle": "#ffffff",
+            "title": "<sp style=\"\n    display: block;\n    font-weight: 500;\n\">\nrefacciones y\n<br>\naccesorios\n</sp>\nnuevos",
+            "color_heading": "#ffffff",
+            "size_text": "h2",
+            "description": "<sp style=\"\n    text-transform: uppercase;\n    font-weight: 800;\n\">\nespera descuentos \n</sp>",
+            "bg_color": "rgba(0,0,0,0)",
+            "colordef": "#ffc122",
+            "opacity_bg": 0,
+            "style_btn": "btn-underline btn-underline-white",
+            "size_btn": "",
+            "button_text": "",
+            "button_link": "",
+            "vertical": "mid",
+            "horizontal": "left",
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "banner_nYyCJQ",
+        "banner_FajybQ"
+      ],
+      "name": "Grid banner",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "no_gutter": false,
+        "show_overlay": true,
+        "gradient_overlay": true,
+        "bg_overlay": "#000000",
+        "opacity_overlay": 0.4,
+        "padding_inner": "0px 46px 0px 46px",
+        "paddingsection": "0px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "featured_collections_7_rwVCyJ": {
+      "type": "featured-collections-7",
+      "blocks": {
+        "collection_N3X4Ec": {
+          "type": "collection",
+          "settings": {
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_dVig6G": {
+          "type": "collection",
+          "settings": {
+            "collection": "frenos"
+          }
+        },
+        "collection_9qk3fc": {
+          "type": "collection",
+          "settings": {
+            "collection": "filtros"
+          }
+        },
+        "collection_pYfVHY": {
+          "type": "collection",
+          "settings": {
+            "collection": "iluminacion"
+          }
+        },
+        "collection_33qcim": {
+          "type": "collection",
+          "settings": {
+            "collection": "accesorios"
+          }
+        },
+        "collection_xMpR46": {
+          "type": "collection",
+          "settings": {
+            "collection": "motocicletas"
+          }
+        },
+        "collection_H8tpky": {
+          "type": "collection",
+          "settings": {
+            "collection": "electrico"
+          }
+        },
+        "collection_tEtj6q": {
+          "type": "collection",
+          "settings": {
+            "collection": "universales"
+          }
+        }
+      },
+      "block_order": [
+        "collection_N3X4Ec",
+        "collection_dVig6G",
+        "collection_9qk3fc",
+        "collection_pYfVHY",
+        "collection_33qcim",
+        "collection_xMpR46",
+        "collection_H8tpky",
+        "collection_tEtj6q"
+      ],
+      "name": "Collection list slide",
+      "settings": {
+        "animation": "fade-left",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "space": 5,
+        "size_text": "p",
+        "bg_item": "#ffffff",
+        "enable_carousel": true,
+        "show": 4,
+        "rows": "2",
+        "size_image": "auto",
+        "width_custom": "50",
+        "arrows": false,
+        "draggable": true,
+        "dots": false,
+        "infinite": true,
+        "paddingsection": "0px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 10px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product_tab_3_KW3KMV": {
+      "type": "product-tab-3",
+      "blocks": {
+        "collection_7pzDJe": {
+          "type": "collection",
+          "settings": {
+            "title": "popular",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_iw6yhn": {
+          "type": "collection",
+          "settings": {
+            "title": "featured",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_YEWPVG": {
+          "type": "collection",
+          "settings": {
+            "title": "top rated",
+            "collection": "suspension-y-direccion"
+          }
+        }
+      },
+      "block_order": [
+        "collection_7pzDJe",
+        "collection_iw6yhn",
+        "collection_YEWPVG"
+      ],
+      "name": "Product tab swiper",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#f5f5f5",
+        "title": "body & trim",
+        "button_heading": "View All",
+        "link_heading": "shopify://collections",
+        "style_btn": "btn-underline",
+        "style_tab": "line",
+        "banner_right": false,
+        "subtitle_banner": "get extra 10% off",
+        "color_sub": "#ffc122",
+        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nworldwide\n</sp>\ndelivery",
+        "color_title": "#ffffff",
+        "size_text": "h3",
+        "button": "shop now",
+        "link": "shopify://collections/all",
+        "style_btn_banner": "btn-underline btn-underline-white",
+        "limit": 10,
+        "perviewDesktop": 4,
+        "perviewTablet": 2,
+        "perviewMobile": 1,
+        "spaceBetween": 0,
+        "arrows": true,
+        "arrow_heading": true,
+        "scrollbar": false,
+        "paddingsection": "40px 0px 40px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product_tab_3_jqcfeg": {
+      "type": "product-tab-3",
+      "blocks": {
+        "collection_h96DwE": {
+          "type": "collection",
+          "settings": {
+            "title": "popular",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_LdYNP4": {
+          "type": "collection",
+          "settings": {
+            "title": "featured",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_xd4dHV": {
+          "type": "collection",
+          "settings": {
+            "title": "top rated",
+            "collection": "suspension-y-direccion"
+          }
+        }
+      },
+      "block_order": [
+        "collection_h96DwE",
+        "collection_LdYNP4",
+        "collection_xd4dHV"
+      ],
+      "name": "Product tab swiper",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#f5f5f5",
+        "title": "electrical parts",
+        "button_heading": "View All",
+        "link_heading": "shopify://collections",
+        "style_btn": "btn-underline",
+        "style_tab": "line",
+        "banner_right": true,
+        "subtitle_banner": "find parts",
+        "color_sub": "#f14141",
+        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nbig brands\n</sp>\nhot price",
+        "color_title": "#ffffff",
+        "size_text": "h3",
+        "button": "shop now",
+        "link": "shopify://collections/all",
+        "style_btn_banner": "btn-underline btn-underline-white",
+        "limit": 10,
+        "perviewDesktop": 4,
+        "perviewTablet": 2,
+        "perviewMobile": 1,
+        "spaceBetween": 0,
+        "arrows": true,
+        "arrow_heading": true,
+        "scrollbar": false,
+        "paddingsection": "0px 0px 40px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product_tab_3_XyrNdQ": {
+      "type": "product-tab-3",
+      "blocks": {
+        "collection_wiC9PF": {
+          "type": "collection",
+          "settings": {
+            "title": "popular",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_iLfTgf": {
+          "type": "collection",
+          "settings": {
+            "title": "featured",
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "collection_QgqXRE": {
+          "type": "collection",
+          "settings": {
+            "title": "top rated",
+            "collection": "suspension-y-direccion"
+          }
+        }
+      },
+      "block_order": [
+        "collection_wiC9PF",
+        "collection_iLfTgf",
+        "collection_QgqXRE"
+      ],
+      "name": "Product tab swiper",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#f5f5f5",
+        "title": "cooling & heating",
+        "button_heading": "View All",
+        "link_heading": "shopify://collections",
+        "style_btn": "btn-underline",
+        "style_tab": "line",
+        "banner_right": false,
+        "subtitle_banner": "quality products",
+        "color_sub": "#4158f2",
+        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nshop with\n</sp>\nconfidence",
+        "color_title": "#ffffff",
+        "size_text": "h3",
+        "button": "shop now",
+        "link": "shopify://collections/all",
+        "style_btn_banner": "btn-underline btn-underline-white",
+        "limit": 10,
+        "perviewDesktop": 4,
+        "perviewTablet": 2,
+        "perviewMobile": 1,
+        "spaceBetween": 0,
+        "arrows": true,
+        "arrow_heading": true,
+        "scrollbar": false,
+        "paddingsection": "0px 0px 40px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "parallax_banner_w8H3fq": {
+      "type": "parallax-banner",
+      "blocks": {
+        "paragraph_gariyx": {
+          "type": "paragraph",
+          "settings": {
+            "subtext": "<h4 style=\"\n    text-transform: uppercase;\n\">\nUnete con \n<sp style=\"color: var(--g-main-2)\">\nWhat's App o correo electrónico\n</sp>\n y obtén descuentos\n</h4>"
+          }
+        },
+        "button_NqDTDL": {
+          "type": "button",
+          "settings": {
+            "button": "Unirme >",
+            "link": "#",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_gariyx",
+        "button_NqDTDL"
+      ],
+      "name": "Parallax banner",
+      "settings": {
+        "animation": "fade-left",
+        "setwidth": "container",
+        "bgsection": "#000000",
+        "parrallax_enable": true,
+        "height_section": "100",
+        "height_section_mobile": "350",
+        "align": "center",
+        "position_text": "mid-center",
+        "bg_box": "rgba(0,0,0,0)",
+        "opacity_bgbox": 1,
+        "title_color": "#ffffff",
+        "color_textbody": "rgba(0,0,0,0)",
+        "bg_overlay": "#000000",
+        "padding_inner": "0px 0px 0px 0px",
+        "gradient_bg": "",
+        "opacity_bg_overlay": 0,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "advanced_content_xqyWdR": {
+      "type": "advanced-content",
+      "blocks": {
+        "productcustom_JayMwK": {
+          "type": "productcustom",
+          "settings": {
+            "width": "33%",
+            "title": "Productos nuevos",
+            "collection": "suspension-y-direccion",
+            "limit": 12,
+            "perviewDesktop": 1,
+            "perviewTablet": 1,
+            "perviewMobile": 1,
+            "rowviewDesktop": 3,
+            "spaceBetween": 0,
+            "arrows": true
+          }
+        },
+        "promo_6dqaY7": {
+          "type": "promo",
+          "settings": {
+            "width": "33%",
+            "align": "auto",
+            "sub_title_block": "",
+            "title_block": "",
+            "promo_banner_height": 440,
+            "promo_subheading": "brake system",
+            "promo_heading": "<sp>\nfor safe \n<br>\ndriving\n</sp>",
+            "promo_paragraph": "From \n<strong style=\"\n    font-size: 24px;\n    line-height: 20px;\n    font-weight: 900;\n    color: var(--g-main-2);\n\">\n$199.99\n</strong>",
+            "promo_btn": "shop now",
+            "promo_link": "",
+            "promo_color": "#ffffff",
+            "promo_size_title": "h3",
+            "promo_position": "top-left",
+            "scroll_type": "from-right",
+            "code": "",
+            "speed": 10,
+            "content_title": "",
+            "btn_countdown": "",
+            "data_countdown": "",
+            "padding-left": false,
+            "padding-right": false
+          }
+        },
+        "productcustom_GN3FmP": {
+          "type": "productcustom",
+          "settings": {
+            "width": "33%",
+            "title": "Producto destacado",
+            "collection": "suspension-y-direccion",
+            "limit": 12,
+            "perviewDesktop": 1,
+            "perviewTablet": 1,
+            "perviewMobile": 1,
+            "rowviewDesktop": 3,
+            "spaceBetween": 0,
+            "arrows": true
+          }
+        }
+      },
+      "block_order": [
+        "productcustom_JayMwK",
+        "promo_6dqaY7",
+        "productcustom_GN3FmP"
+      ],
+      "name": "Advanced Content",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "text_color": "rgba(0,0,0,0)",
+        "bgsection": "#f5f5f5",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "padding_column": "custom",
+        "distance_col": "15",
+        "col_center": false,
+        "paddingsection": "30px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "brand_swiper_TDNdig": {
+      "type": "brand-swiper",
+      "blocks": {
+        "logo_w4U3zF": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/NIKKO.jpg",
+            "link": ""
+          }
+        },
+        "logo_RrBgWi": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/kabuto.jpg",
+            "link": ""
+          }
+        },
+        "logo_NMApbK": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/BEST-COOLING.jpg",
+            "link": ""
+          }
+        },
+        "logo_3W8jXm": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/FP.jpg",
+            "link": ""
+          }
+        },
+        "logo_EBq7rE": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/SAFETY.jpg",
+            "link": ""
+          }
+        },
+        "logo_gCByfR": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MOTORFIL.jpg",
+            "link": ""
+          }
+        },
+        "logo_A9YKJR": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/NSB.jpg",
+            "link": ""
+          }
+        },
+        "logo_ghadFX": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/TOP-ENGINE.jpg",
+            "link": ""
+          }
+        },
+        "logo_GQf7yb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MASTER-CUT.jpg",
+            "link": ""
+          }
+        },
+        "logo_XhBabz": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/VOLTMAX.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_w4U3zF",
+        "logo_RrBgWi",
+        "logo_NMApbK",
+        "logo_3W8jXm",
+        "logo_EBq7rE",
+        "logo_gCByfR",
+        "logo_A9YKJR",
+        "logo_ghadFX",
+        "logo_GQf7yb",
+        "logo_XhBabz"
+      ],
+      "custom_css": [
+        ".brand-sw-wrapper {background-color: #fff;}"
+      ],
+      "name": "Logo swiper",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#f5f5f5",
+        "title_top": "",
+        "title": "<h2>Marcas</h2>",
+        "des": "<h6>Gran variedad de marcas a excelentes precios</h6>",
+        "button_heading": "",
+        "link_heading": "",
+        "style_btn": "btn-underline",
+        "align-heading": "left",
+        "perviewDesktop": 6,
+        "perviewTablet": 3,
+        "perviewMobile": 1,
+        "spaceBetween": 0,
+        "nowrap": false,
+        "arrows": false,
+        "arrow_heading": true,
+        "scrollbar": false,
+        "width_image": 100,
+        "paddingsection": "0px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "advanced_content_hedhRk": {
+      "type": "advanced-content",
+      "blocks": {
+        "text_JWwJ7b": {
+          "type": "text",
+          "settings": {
+            "width": "50%",
+            "bg_text": "#ffffff",
+            "padding_text": "58px 0px 0px 80px",
+            "subtitle": "<sp class=\"fw-medium\">\n¿Quienes somos?\n</sp>",
+            "title": "<sp style=\"text-transform:none;\">\nMiyali Autopartes,\n<br>\nDistribuidor lider en refacciones.\n</sp>",
+            "size_text": "h3",
+            "description": "<p>Somos un distribuidor mayorista de autopartes,\n<br>\natendemos reaccionarias y distribuidores.\n<br></p>\n<p>Contamos con una amplia gama de marcas\n<br>\ny productos de la mas alta calidad a \n<br>\nprecios competitivos, siempre garantizando\n<br>\nun extenso surtido donde encontrara lo que necesite.\n</p>\n<sp style=\"\n    align-items: center;\n    display: flex;\n    flex-wrap: wrap;\n    gap: 20px 60px;\n    margin-top: 11px;\n\">\n<sp style=\"\n    flex: 0 1 auto;\n\">\n<sp class=\"h1 d-block\" style=\"\n    color: var(--g-main-2);\n\">\n98%\n</sp>\n<sp style=\"font-weight: 800;color: #000;\">\nEl en el surtido de su\n<br>\npedido solicitado.\n</sp>\n</sp>\n<sp style=\"\n    flex: 0 1 auto;\n\">\n<sp class=\"h6 d-block\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" style=\"\n    width: 20px;\n    height: 20px;\n    margin-right: 5px;\n    vertical-align: -4px;\n\">\n<path d=\"M12.5 0C10.875 0 9.125 0 7.5 0C3 0.5 0.5 3 0 7.5C0 9.125 0 10.875 0 12.5C0.5 17 3 19.5 7.5 20C9.125 20 10.875 20 12.5 20C17 19.5 19.5 17 20 12.5C20 10.875 20 9.125 20 7.5C19.5 3 17 0.5 12.5 0ZM14.75 8.375L10.125 13.375C9.625 13.875 8.875 13.875 8.375 13.5L5.5 11C5 10.5 4.875 9.625 5.375 9.125C5.875 8.625 6.625 8.625 7.125 9L9 10.75L12.875 6.625C13.375 6.125 14.125 6.125 14.625 6.625C15.125 7 15.25 7.875 14.75 8.375Z\" fill=\"#4158F2\"></path>\n</svg>\nExelente servicio\n</sp>\nSu comodidad y preferencia\n<br>\n es nuestra meta.\n</sp>\n</sp>",
+            "style_btn": "btn-underline btn-underline-white",
+            "size_btn": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "image_wTMT7Y": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "align": "auto",
+            "width_image": 100,
+            "image_link": "",
+            "enable_top": false,
+            "code": "",
+            "padding-left": false,
+            "padding-right": false
+          }
+        }
+      },
+      "block_order": [
+        "text_JWwJ7b",
+        "image_wTMT7Y"
+      ],
+      "custom_css": [
+        ".row {gap: 20px 0;}"
+      ],
+      "name": "Advanced Content",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "text_color": "rgba(0,0,0,0)",
+        "bgsection": "#f5f5f5",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "padding_column": "0",
+        "distance_col": "15",
+        "col_center": false,
+        "paddingsection": "0px 0px 55px 0px",
+        "paddingtablet": "0px 0px 55px 0px",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "featured_articles_2_jMCPzi": {
+      "type": "featured-articles-2",
+      "name": "Blog posts special",
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "zindex": "0",
+        "bgsection": "#f5f5f5",
+        "rangebg": 0,
+        "bgbefore": "#e3c9b8",
+        "title_top": "",
+        "title": "<h4>\ntips & tricks\n</h4>",
+        "des": "",
+        "button_heading": "",
+        "link_heading": "",
+        "style_btn": "btn-underline btn-underline-white",
+        "align-heading": "left",
+        "blog": "news",
+        "button_text": "read more",
+        "image_size": "auto",
+        "reverse": false,
+        "paddingsection": "0px 0px 50px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "1787354790bf65ecbf": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "service_qTMLfj",
+    "grid_banner_k3wbkE",
+    "featured_collections_7_rwVCyJ",
+    "product_tab_3_KW3KMV",
+    "product_tab_3_jqcfeg",
+    "product_tab_3_XyrNdQ",
+    "parallax_banner_w8H3fq",
+    "advanced_content_xqyWdR",
+    "brand_swiper_TDNdig",
+    "advanced_content_hedhRk",
+    "featured_articles_2_jMCPzi",
+    "1787354790bf65ecbf"
+  ]
+}

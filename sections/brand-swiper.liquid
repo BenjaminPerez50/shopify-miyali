@@ -1,0 +1,519 @@
+<!-- brand-swiper.liquid -->
+<style>
+  .customstyle{{ section.id }} .section-title-1 {
+    font-weight: var(--g-h4-font-weight);
+    font-size: var(--g-h4-font-size);
+    line-height: var(--g-h4-font-lineheight);
+    letter-spacing: var(--g-h4-font-spacing);
+    text-transform: var(--g-h4-font-transform);
+  }
+  .customstyle{{ section.id }} .swiper-slide-visible {
+    border-right: 1px solid var(--color-border);
+  }
+  {% if section.settings.nowrap %}
+  .customstyle{{ section.id }} .swiper-container {
+    overflow: visible;
+  }
+  {% endif %}
+  {%- for block in section.blocks -%}
+    {%- if block.settings.image != blank -%}
+    .carousel__slide-wrapper--{{ block.id }} .image-content__image-container {
+      max-width: {{ block.settings.image.width }}px;
+    }
+    {%- endif -%}
+  {%- endfor -%}
+</style>
+{%- render 'style-section' -%}
+<brand-swiper class="d-block brand-swiper customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}">
+  <span class="top"></span>
+  <div class="{{ section.settings.setwidth }}">
+      <div class="section-block">
+        <div class="brand-sw-heading">
+          <div style="gap: 15px 0;" class="{% if section.settings.arrow_heading %}swiper-wrapper-{{ section.id }} arrow-heading d-flex flex-wrap align-items-center justify-content-between mb-3 {% else %} section__header-wp{% endif %}">
+                    
+            <div class="section-heading-wp">
+              {% render 'section-heading' %}
+            </div>
+
+            {% if section.settings.arrow_heading %}
+            <div style="gap: 2px;" class="btn-prev-next d-flex position-relative justify-content-md-end justify-content-center">
+              <div class="swiper-button-prev position-static mt-0">
+                {% render "icon-swiper-prev" %}
+              </div>
+              <div class="swiper-button-next position-static mt-0">
+                {% render "icon-swiper-next" %}
+              </div>
+            </div>
+            {% endif %}
+          
+          </div>
+        </div>
+        <div class="brand-sw-wrapper position-relative">
+          <div id="swipercol-{{ section.id }}" class="brand-wrapper swiper-container swipercol-{{ section.id }}" 
+              data-section-id="{{ section.id }}"  
+              data-section-type="swipercustom"
+              data-perview-desktop="{{ section.settings.perviewDesktop }}"
+              data-perview-tablet="{{ section.settings.perviewTablet }}"
+              data-perview-mobile="{{ section.settings.perviewMobile }}"
+              data-space-between="{{ section.settings.spaceBetween }}"
+            >
+              <div class="swiper-wrapper">
+                  {%- for block in section.blocks -%}
+                      <div class="swiper-slide brand-item carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }}>
+                          <div>
+                              <div class="image-content__image-container overflow-hidden mx-auto" style="width: {{ section.settings.width_image }}%;">
+                              <a href="{{ block.settings.link | default: '#' }}" 
+                              class="image-content__image-wrapper d-block {% if section.settings.grayscale -%} hv-image-grayscale {% endif %}"
+                              title="{{ block.settings.image.alt }}"
+                              style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                              {% assign img_url = block.settings.image | image_url: width: 1 | replace: 'width=1', 'width={width}' %}
+                              {%- if block.settings.image != blank -%}
+                              <img class="lazyload scale-in"
+                                  src="{{ block.settings.image | image_url: width: 1, height: 1 }}" 
+                                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                                  data-src="{{ img_url }}" 
+                                  data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                                  data-sizes="auto"
+                                  alt="{{ block.settings.image.alt }}" 
+                                  loading="lazy"
+                                  width="{{ block.settings.image.width }}"
+                                  height="{{ block.settings.image.height }}">
+                              {%- else -%}
+                              <div class="image-block__image">
+                                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                              </div>
+                              {%- endif -%}
+                              </a>
+                              </div>
+                          </div>
+                      </div>
+                  {%- endfor -%}
+
+              {%- if section.settings.scrollbar -%}
+                  <div class="swiper-scrollbar"></div>
+              {%- endif -%}
+
+              </div>
+          </div>
+          {% if section.settings.arrow_heading != true %}
+            {%- if section.settings.arrows -%}
+            <div class="swiper-wrapper-{{ section.id }}">
+              <div class="swiper-button-prev">
+                  {% render "icon-swiper-prev" %}
+              </div>
+              <div class="swiper-button-next">
+                  {% render "icon-swiper-next" %}
+              </div>
+            </div>
+            {%- endif -%}
+          {% endif %}
+        </div>
+      </div>
+  </div>
+  <span class="bottom"></span>
+</brand-swiper>
+
+{% schema %}
+{
+  "name": "Logo swiper",
+  "class": "index-section",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "fade-up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fade-down",
+          "label": "Fade Down"
+        },
+        {
+          "value": "fade-left",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fade-right",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fade-up-right",
+          "label": "Fade Up Right"
+        },
+        {
+          "value": "fade-up-left",
+          "label": "Fade Up Left"
+        },
+        {
+          "value": "fade-down-right",
+          "label": "Fade Down Right"
+        },
+        {
+          "value": "fade-down-left",
+          "label": "Fade Down Left"
+        },
+        {
+          "value": "flip-up",
+          "label": "Flip Up"
+        },
+        {
+          "value": "flip-down",
+          "label": "Flip Down"
+        },
+        {
+          "value": "flip-left",
+          "label": "Flip Left"
+        },
+        {
+          "value": "flip-right",
+          "label": "Flip Right"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-down",
+          "label": "Slide Down"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "slide-right",
+          "label": "Slide Right"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        },
+        {
+          "value": "zoom-in-up",
+          "label": "Zoom In Up"
+        },
+        {
+          "value": "zoom-in-down",
+          "label": "Zoom In Down"
+        },
+        {
+          "value": "zoom-in-left",
+          "label": "Zoom In Left"
+        },
+        {
+          "value": "zoom-in-right",
+          "label": "Zoom In Right"
+        },
+        {
+          "value": "zoom-out",
+          "label": "Zoom Out"
+        },
+        {
+          "value": "zoom-out-up",
+          "label": "Zoom Out Up"
+        },
+        {
+          "value": "zoom-out-down",
+          "label": "Zoom Out Down"
+        },
+        {
+          "value": "zoom-out-left",
+          "label": "Zoom Out Feft"
+        },
+        {
+          "value": "zoom-out-right",
+          "label": "Zoom Out Right"
+        }
+      ],
+      "label": "Select Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "Sub Title Top"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Logo Carousel"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "liquid",
+      "id": "button_heading",
+      "label": "Button text",
+      "default": "discover now"
+    },
+    {
+      "type": "url",
+      "id": "link_heading",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "style_btn",
+      "label": "Style Button",
+      "default": "btn-underline btn-underline-white",
+      "options": [
+        {
+          "value": "btn-theme",
+          "label": "Button Box"
+        },
+        {
+          "value": "btn-theme btn-white",
+          "label": "Button Box White"
+        },
+        {
+          "value": "btn-underline",
+          "label": "Button Line"
+        },
+        {
+          "value": "btn-underline btn-underline-white",
+          "label": "Button Line White"
+        },
+        {
+          "value": "btn-outline",
+          "label": "Button Outline"
+        },
+        {
+          "value": "btn-outline btn-outline-white",
+          "label": "Button Outline White"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Carousel"
+    },
+    {
+      "type": "range",
+      "id": "perviewDesktop",
+      "label": "Per View Desktop",
+      "max": 8,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "perviewTablet",
+      "label": "Per View Tablet",
+      "max": 8,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "perviewMobile",
+      "label": "Per View Mobile",
+      "max": 8,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "spaceBetween",
+      "label": "Space Between",
+      "max": 100,
+      "min": 0,
+      "step": 1,
+      "unit": " sp",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "nowrap",
+      "label": "Wrap Box",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Arrows",
+      "default": true
+    },
+    {
+      "label": "Arrow heading",
+      "id": "arrow_heading",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "scrollbar",
+      "label": "Scroll Bar",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "width_image",
+      "label": "Width Image of Column",
+      "max": 100,
+      "min": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingtablet",
+      "label": "Padding Section Tablet",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "40px 0px 40px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin "
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "margintablet",
+      "label": "Margin Section Tablet",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Logo link to"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo swiper",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

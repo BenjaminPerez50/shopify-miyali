@@ -1,0 +1,42 @@
+<div id="CartDrawer" class="drawer drawer--right">
+  <div class="drawer__inner">
+    <div class="modal-header js-drawer-close py-4">
+        <button type="button" class="close" ></button>
+    </div>
+    <ul class="drawer__nav">
+      {%- for link in linklists[settings.menucategories_linklist].links -%}
+        {%- assign child_list_handle = link.title | handleize -%}
+        {%- if link.links != blank -%}
+          <li class="drawer__nav-item">
+            <div class="drawer__nav-has-sublist">
+              <a href="{{ link.url }}" class="drawer__nav-link drawer__nav-link--top-level drawer__nav-link--split" id="DrawerLabel-{{ child_list_handle }}" {% if link.active %} aria-current="page"{% endif %}>
+                {%- render 'processMenuTitle' , itemName: link.title -%}
+                {%- render 'processMenuLabel' , itemName: link.title -%}
+              </a>
+              <button data-toggle="collapse" data-target="#DrawerLinklist-{{ child_list_handle }}" for="DrawerLinklist-{{ child_list_handle }}" type="button" aria-controls="DrawerLinklist-{{ child_list_handle }}" class="text-link drawer__nav-toggle-btn collapsed" aria-label="{%- render 'processMenuTitle' , itemName: link.title -%}" aria-expanded="true">
+                <span class="drawer__nav-toggle--open">
+                  {%- render 'icon-plus' -%}
+                </span>
+                <span class="drawer__nav-toggle--close">
+                  {%- render 'icon-minus' -%}
+                </span>
+              </button>
+            </div>
+            <div class="collapse meganav meganav--drawer" id="DrawerLinklist-{{ child_list_handle }}" aria-labelledby="DrawerLabel-{{ child_list_handle }}" role="navigation">
+              <ul class="meganav__nav">
+                {%- render 'drawer-nav', link: link -%}
+              </ul>
+            </div>
+          </li>
+        {%- else -%}
+          <li class="drawer__nav-item">
+            <a href="{{ link.url }}" class="drawer__nav-link drawer__nav-link--top-level" {% if link.active %} aria-current="page"{% endif %}>
+              {%- render 'processMenuTitle' , itemName: link.title -%}
+              {%- render 'processMenuLabel' , itemName: link.title -%}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

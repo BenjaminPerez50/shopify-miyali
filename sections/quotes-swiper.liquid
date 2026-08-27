@@ -1,0 +1,858 @@
+<!-- quotes-swiper.liquid -->
+<style>
+    .customstyle{{ section.id }} {
+        --g-color-heading: {{ section.settings.color_heading }};
+        --color-body-text: {{ section.settings.color_body }}
+    }
+    .quotes-bottom {
+      font-family: var(--g-font-1);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--g-color-heading);
+    }
+    @media (min-width:750px){
+        .customstyle{{ section.id }} .quote-wrap{
+            width:{{ section.settings.widthcolumn }}%;
+        }
+    }
+    .customstyle{{ section.id }} .rating li.rated svg{
+        fill: {{ section.settings.color_rated }};
+    }
+
+    {% if section.settings.background_image != blank %}
+        .customstyle{{ section.id }} .swiper-button-prev, 
+        .customstyle{{ section.id }} .swiper-button-next {
+            background: #fff;
+            border-color: #fff;
+        }
+    {% endif %}
+    .customstyle{{ section.id }} .quote-content {
+        padding-bottom: 60px;
+        border-bottom: 1px solid var(--color-border);
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+    .customstyle{{ section.id }} .h6 {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+    }
+    {% if section.settings.nowrap %}
+    .customstyle{{ section.id }} .swiper-container {
+      overflow: visible;
+    }
+    {% endif %}
+
+    .swiper-slide ,
+    .customstyle{{ section.id }} .quote-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .quote-product {
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      margin: 5px 0 0;
+    }
+    .quote-product > a {
+      width: 60px;
+      height: 72px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .media-body-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 20px;
+      margin-bottom: 7px;
+      font-family: var(--g-font-1);
+      color: var(--color-accent-3);
+      text-transform: uppercase;
+    }
+    .swipercol-{{ section.id }} {
+      margin-top: 31px;
+    }
+    .customstyle{{ section.id }} .txt-body  {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .customstyle{{ section.id }} .h1 {
+      color: var(--g-main-2);
+    }
+    .customstyle{{ section.id }} .quote-wrap-top {
+      gap: 14px;
+    }
+    @media (min-width: 1200px) {
+      .customstyle{{ section.id }} .h1 {
+        font-size: calc(var(--g-h1-font-size) + 20px);
+      }
+      .customstyle{{ section.id }} .swiper-slide:not(:last-child) {
+        border-right: 1px solid var(--color-border);
+      }
+    }
+
+    /* Popup Overlay */
+    .video-popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+    }
+    .video-popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 800px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-popup-content iframe {
+      width: 100%;
+      height: 450px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0px 10px 5px;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      font-size: 30px;
+      line-height: 17px;
+    }
+
+    button.play-btn {
+      animation: spinnerRotate 6s linear infinite;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    button.play-btn svg {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      left: 50%;
+    }
+
+    .video-thumbnail img {
+      object-fit: cover;
+    }
+
+    /* VIDEO IMAGE POPUP END */
+    {%- for block in section.blocks -%}
+    .carousel__slide-wrapper--{{ block.id }} .quote__slide {
+      background-color: {{ section.settings.bg_item | color_to_rgb }};
+      border-radius: 10px;
+      {% if section.settings.show_bg_blur %}
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      background-color: rgb({{ section.settings.bg_item | color_to_rgb | remove: 'rgb(' | remove: ')' }},.1);
+      {% endif %}
+    }
+    {%- endfor -%}
+</style>
+{%- render 'style-section' -%}
+<quotes-swiper class="d-block quotes-swiper customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}">
+    <div class="{{ section.settings.setwidth }}">
+        <div class="section-block">
+            {% render 'section-heading' %}
+
+            <div id="swipercol-{{ section.id }}" class="quotes-wrapper swiper-container swipercol-{{ section.id }}" 
+                data-section-id="{{ section.id }}"  
+                data-section-type="swipercustom"
+                data-perview-desktop="{{ section.settings.perviewDesktop }}"
+                data-perview-tablet="{{ section.settings.perviewTablet }}"
+                data-perview-mobile="{{ section.settings.perviewMobile }}"
+                data-space-between="{{ section.settings.spaceBetween }}"
+                data-initialslide="1"
+            >
+                <div class="swiper-wrapper">
+                  {%- for block in section.blocks -%}
+                      {%- case block.type -%}
+                          {%- when 'quote' -%}
+                          <div class="swiper-slide carousel__slide-wrapper--{{ block.id }} h-100" {{ block.shopify_attributes }}>
+                              {%- liquid
+                              assign style = section.settings.style
+                              assign title = block.settings.title
+                              assign quote = block.settings.quote
+                              assign rate = block.settings.rate
+                              assign avatar = block.settings.avatar
+                              assign author = block.settings.author
+                              assign info = block.settings.info
+                              assign size_text = section.settings.size_text
+                              assign aligntext = section.settings.aligntext
+
+                              case style
+                                  when 'style-1'
+                                      render 'quote-style-1', title: title, quote: quote, rate: rate, avatar: avatar, author: author, info: info, size_text: size_text, aligntext: aligntext
+                                  when 'style-2'
+                                      render 'quote-style-2', title: title, quote: quote, rate: rate, avatar: avatar, author: author, info: info, size_text: size_text, aligntext: aligntext
+                              endcase
+                              -%}
+
+                              {%- if block.settings.product != blank -%}
+                              {% assign product = block.settings.product %}
+                              <div class="quote-product align-items-center">
+                                <a href="{{ product.url }}"><img class="mr-3 lazyload adv-img" 
+                                  data-src="{{ product.featured_image | image_url: width: 150 }}" 
+                                  src="{{ product.featured_image | image_url: width: 1, height: 1 }}"
+                                  loading="lazy"
+                                  width="{{ product.featured_image.width }}"
+                                  height="{{ product.featured_image.height }}"></a>
+                                <div class="media-body">
+                                  <a href="{{ product.url }}" title="{{ product.title }}" class="media-body-title d-block">{{ product.title }}
+                                  </a>
+                                  {%- if product.available -%}
+                                    <div class="product-card__price">
+                                      {%- if product.compare_at_price > product.price -%}
+                                        {%- if product.price_varies -%}
+                                          {%- assign sale_price = product.price | money -%}
+                                          {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                                        {%- else -%}
+                                          <span class="visually-hidden">{{ 'products.product.regular_price' | t }}
+                                          </span>
+                                          <s class="product-card__regular-price">{{ product.compare_at_price | money }}
+                                          </s>
+                                          <span class="visually-hidden">{{ 'products.product.sale_price' | t }}
+                                          </span>
+                                          {{ product.price | money }}
+                                        {%- endif -%}
+                                      {%- else -%}
+                                        {%- if product.price_varies -%}
+                                          {%- assign price = product.price | money -%}
+                                          {{ 'products.product.from_text_html' | t: price: price }}
+                                        {%- else -%}
+                                          <span class="visually-hidden">{{ 'products.product.regular_price' | t }}
+                                          </span>
+                                          {{ product.price | money }}
+                                        {%- endif -%}
+                                      {%- endif -%}
+                                    </div>
+                                  {%- else -%}
+                                    <div class="product-card__availability">
+                                      {{ 'products.product.sold_out' | t }}
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>                        
+                              {%- endif -%}
+                          </div>
+
+                          {%- when 'video-popup' -%}
+                            <style>
+                              .custom-{{ section.id }} .video-thumbnail img {
+                                width: {{ block.settings.size_img }}px;
+                                height: {{ block.settings.size_img }}px;
+                                border-radius: 50%;
+                              }
+                            </style>
+                            <div class="swiper-slide video-popup h-100">
+                              <div class="video-card h-100">
+                                <div class="video-thumbnail h-100 w-100" data-video="https://www.youtube.com/embed/{{ block.settings.video_url.id }}">
+                                  <button class="play-btn h-100 w-100 p-0 position-relative">
+                                    {% if block.settings.featured_image != blank %}
+                                        <img loading="lazy" class="h-100 w-100 m-0"
+                                        sizes="(max-width: 740px) 80vw, (max-width: 999px) 60vw, 425px"
+                                        alt="" 
+                                        src="{{ block.settings.featured_image | image_url: width: block.settings.featured_image.width }}" 
+                                        srcset="{%- if block.settings.featured_image.width >= 3000 -%}{{ block.settings.featured_image | image_url: width: 3000, crop: 'center' }} 3000w,{%- endif -%} {{ block.settings.featured_image | image_url }} {{ block.settings.featured_image.width }}w"
+                                        src="{{ block.settings.featured_image | image_url: width: 1500 }}"
+                                        height="{{ block.settings.featured_image.height }}"
+                                        width="{{ block.settings.featured_image.width }}">
+                                    {% else %}
+                                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                    {% endif %}
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90" fill="none">
+                                      <circle cx="45" cy="45" r="45" fill="white"/>
+                                      <path d="M39.6009 35.2657C39.3257 35.0889 39.0129 35 38.7 35C38.4165 35 38.1326 35.0727 37.8757 35.2197C37.3353 35.5281 37 36.1134 37 36.7499V54.2493C37 54.8858 37.3353 55.4711 37.8757 55.7796C38.416 56.0897 39.0768 56.071 39.6009 55.7335L53.2009 46.9839C53.6977 46.6634 54 46.1028 54 45.4996C54 44.8964 53.6977 44.3357 53.2009 44.0153L39.6009 35.2657Z" fill="black"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                      {%- endcase -%}
+                  {%- endfor -%}
+                </div>
+
+                {%- if section.settings.scrollbar -%}
+                  <div class="swiper-scrollbar"></div>
+                {%- endif -%}
+
+                {%- if section.settings.arrows -%}
+                  <div class="swiper-button-prev">
+                      {% render "icon-swiper-prev" %}
+                  </div>
+                  <div class="swiper-button-next">
+                      {% render "icon-swiper-next" %}
+                  </div>
+                {%- endif -%}
+            </div>
+
+            {% if section.settings.content_bottom != blank %}
+            <div class="quotes-bottom text-center mt-xl-60 mt-4">
+              {{ section.settings.content_bottom }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</quotes-swiper>
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'video-popup' -%}
+      <div id="videoPopup" class="video-popup-overlay">
+        <div class="video-popup-content">
+          <iframe id="popupIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <button id="closePopup" class="popup-close">&times;</button>
+        </div>
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "Testimonials Swiper",
+  "class": "index-section",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "fade-up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fade-down",
+          "label": "Fade Down"
+        },
+        {
+          "value": "fade-left",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fade-right",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fade-up-right",
+          "label": "Fade Up Right"
+        },
+        {
+          "value": "fade-up-left",
+          "label": "Fade Up Left"
+        },
+        {
+          "value": "fade-down-right",
+          "label": "Fade Down Right"
+        },
+        {
+          "value": "fade-down-left",
+          "label": "Fade Down Left"
+        },
+        {
+          "value": "flip-up",
+          "label": "Flip Up"
+        },
+        {
+          "value": "flip-down",
+          "label": "Flip Down"
+        },
+        {
+          "value": "flip-left",
+          "label": "Flip Left"
+        },
+        {
+          "value": "flip-right",
+          "label": "Flip Right"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-down",
+          "label": "Slide Down"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "slide-right",
+          "label": "Slide Right"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        },
+        {
+          "value": "zoom-in-up",
+          "label": "Zoom In Up"
+        },
+        {
+          "value": "zoom-in-down",
+          "label": "Zoom In Down"
+        },
+        {
+          "value": "zoom-in-left",
+          "label": "Zoom In Left"
+        },
+        {
+          "value": "zoom-in-right",
+          "label": "Zoom In Right"
+        },
+        {
+          "value": "zoom-out",
+          "label": "Zoom Out"
+        },
+        {
+          "value": "zoom-out-up",
+          "label": "Zoom Out Up"
+        },
+        {
+          "value": "zoom-out-down",
+          "label": "Zoom Out Down"
+        },
+        {
+          "value": "zoom-out-left",
+          "label": "Zoom Out Feft"
+        },
+        {
+          "value": "zoom-out-right",
+          "label": "Zoom Out Right"
+        }
+      ],
+      "label": "Select Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "textarea",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "Sub Title Top"
+    },
+    {
+      "type": "liquid",
+      "id": "title",
+      "label": "Title",
+      "default": "User reviews"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "textarea",
+      "id": "content_bottom",
+      "label": "HTML / Description bottom"
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Item"
+    },
+    {
+      "type": "select",
+      "id": "aligntext",
+      "label": "Text Align ",
+      "default": "text-left",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style Testimonial ",
+      "default": "style-1",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "Style - 1"
+        },
+        {
+          "value": "style-2",
+          "label": "Style - 2"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color heading",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_body",
+      "label": "Color body",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_rate",
+      "label": "Color Rate",
+      "default": "#f1f1f1"
+    },
+    {
+      "type": "color",
+      "id": "color_rated",
+      "label": "Color Rated",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "size_text",
+      "default": "txt-body",
+      "options": [
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "txt-body",
+          "label": "Body"
+        }
+      ],
+      "label": "Text Size"
+    },
+    {
+      "type": "color",
+      "id": "bg_item",
+      "label": "Background Item",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bg_blur",
+      "label": "Show Background Blur"
+    },
+    {
+      "type": "range",
+      "id": "widthcolumn",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Width of Column",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_padding_inner",
+      "label": "Enable Padding Inner",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Carousel"
+    },
+    {
+      "type": "range",
+      "id": "perviewDesktop",
+      "label": "Per View Desktop",
+      "max": 6,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "perviewTablet",
+      "label": "Per View Tablet",
+      "max": 8,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "perviewMobile",
+      "label": "Per View Mobile",
+      "max": 8,
+      "min": 1,
+      "step": 1,
+      "unit": " c",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "spaceBetween",
+      "label": "Space Between",
+      "max": 40,
+      "min": 0,
+      "step": 1,
+      "unit": " sp",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "nowrap",
+      "label": "Wrap Box",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "scrollbar",
+      "label": "Scroll Bar",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingtablet",
+      "label": "Padding Section Tablet",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "60px 0px 60px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "margintablet",
+      "label": "Margin Section Tablet",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Comment",
+          "default": "Comment"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Author's name"
+        },
+        {
+          "type": "textarea",
+          "id": "info",
+          "label": "Author's info"
+        },
+        {
+          "type": "range",
+          "id": "rate",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Text",
+          "default": "Add customer reviews and testimonials to showcase your store’s happy customers."
+        },
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    },
+    {
+      "type": "video-popup",
+      "name": "Video popup",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Image Video"
+        },
+        {
+          "type": "text",
+          "id": "size_img",
+          "label": "Size image",
+          "default": "158"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": [
+              "youtube",
+              "vimeo"
+          ],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "Link video",
+          "placeholder": "Placeholder video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Swiper",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

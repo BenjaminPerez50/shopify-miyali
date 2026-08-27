@@ -1,0 +1,45 @@
+<style>
+  #topbar .topbar__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--header-text-top);
+  }
+  .topbar__list-item:not(:last-child) {
+    padding-right: 13px;
+    margin-right: 13px;
+    border-right: 1px solid var(--color-border);
+  }
+</style>
+<section id="topbar">
+    <div class="{{ section.settings.setwidth }}">
+      <div class="d-flex align-items-center justify-content-between">
+
+        {%- if text_topbar_left != blank -%}
+        <div class="col-left text-left d-flex justify-content-center justify-content-sm-start text-sm-left text-center">
+          {{ text_topbar_left }}
+        </div>
+        {%- endif -%}
+
+        {%- if text_topbar != blank -%}
+          <div class="col col-center justify-content-center justify-content-lg-center text-center d-xl-flex d-none">
+            {{ text_topbar }}
+          </div>
+        {%- endif -%}
+
+        {%- if linklists[link_list].links.size > 0 -%}
+        <div class="col-right justify-content-end d-none d-sm-flex">
+          <ul class="topbar__list topbar-block">
+            {%- for link in linklists[link_list].links -%}
+            <li class="topbar__list-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+  </section>

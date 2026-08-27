@@ -1,0 +1,461 @@
+<style>
+    .customstyle{{ section.id }} select {
+        color: {{ section.settings.color_select }};
+        border: 1px solid rgb(var(--border-color))!important;
+        padding: 13.5px 14px;
+        border-radius: 3px;
+        text-transform: capitalize;
+        text-align: left;
+        flex: 1;
+
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgNiA0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMi42MTA3NCAzLjU3OTA4TDAuMTI5MDI4IDAuODMxMTA4Qy0wLjE2Mzg1MiAwLjUwNzc4OCAwLjA3NDE3NzYgMS44NDMyZS0wNyAwLjUxODY3MiAxLjg0MzJlLTA3SDUuNDgyMUM1LjU4MTU4IC04LjI0Mzg4ZS0wNSA1LjY3ODk3IDAuMDI3NjEzOSA1Ljc2MjYyIDAuMDc5NzcyOEM1Ljg0NjI3IDAuMTMxOTMyIDUuOTEyNjIgMC4yMDYzNDIgNS45NTM3MyAwLjI5NDA5MkM1Ljk5NDg1IDAuMzgxODQzIDYuMDA4OTggMC40NzkyMTQgNS45OTQ0NCAwLjU3NDU0NkM1Ljk3OTkgMC42Njk4NzcgNS45MzczIDAuNzU5MTI4IDUuODcxNzQgMC44MzE2MDlMMy4zOTAwMyAzLjU3ODU4QzMuMzQxNDYgMy42MzI0MiAzLjI4MTU2IDMuNjc1NTcgMy4yMTQzNiAzLjcwNTE0QzMuMTQ3MTUgMy43MzQ3IDMuMDc0MiAzLjc1IDMuMDAwMzkgMy43NUMyLjkyNjU4IDMuNzUgMi44NTM2MiAzLjczNDcgMi43ODY0MSAzLjcwNTE0QzIuNzE5MjEgMy42NzU1NyAyLjY1OTMxIDMuNjMyNDIgMi42MTA3NCAzLjU3ODU4VjMuNTc5MDhaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K');
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 250px;
+    }
+    .customstyle{{ section.id }} #search-filter {
+        padding: 20px;
+        background-color: {{ section.settings.bg_inner }};
+        gap: 23px;
+        z-index: 1;
+    }
+    .customstyle{{ section.id }} .form-group {
+        gap: 10px;
+    }
+    .customstyle{{ section.id }} .label-filter {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: max-content;
+    }
+    .search-filter-button {
+        cursor: pointer;
+    }
+    .customstyle{{ section.id }} .btn-theme {
+        background-color: var(--g-main);
+        color: #fff;
+    }
+    .customstyle{{ section.id }} .btn-theme:before {
+        background-color: var(--g-main-2) !important;
+    }
+    @media (max-width: 576px) {
+        .customstyle{{ section.id }} select ,
+        .customstyle{{ section.id }} .form-group ,
+        .customstyle{{ section.id }} form {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="search-filter-section customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}">
+{%- render 'style-section' -%}
+  <div class="{{ section.settings.setwidth }}">
+
+    {% render 'section-heading' %}
+
+      <div id="search-filter" class="position-relative d-flex align-items-center justify-content-center flex-md-row flex-column">
+            {% if section.settings.collection-title != blank %}
+                <label class="label-filter h6 mb-0">{{ section.settings.collection-title }}</label>
+            {% endif %}
+          <form role="form">
+            <div class="form-group d-flex align-items-center flex-wrap flex-sm-row flex-column mb-0">
+  
+              <select class=" filter-top-collection" id="collection-select-1">
+                <option value="all" selected>{% if section.settings.content_filter != blank %}{{ section.settings.content_filter }}{% else %}All{% endif %}</option>
+                {% for collection in collections%}
+                <option value="{{ collection.handle }}">{{ collection.title }}</option>            
+                {% endfor %}
+              </select>
+  
+              {% assign tags = section.settings.tag_lv_1 | split: ',' %}
+              {% if section.settings.filter_lv_1 != blank %}
+              <label class="label-filter">{{ section.settings.filter_lv_1 }}</label>
+              {% endif %}
+              <select class=" filter-top tag-select">
+                <option value=""  selected>{% if section.settings.content_filter_1 != blank %}{{ section.settings.content_filter_1 }}{% else %}All{% endif %}</option>
+                {% for t in tags %}
+                {% assign tag = t | strip %}
+                <option value="{{ tag | handle }}">{{ tag }}</option>
+                {% endfor %}
+              </select>    
+  
+              {% assign tags = section.settings.tag_lv_2 | split: ',' %}
+              {% if section.settings.filter_lv_2 != blank %}
+              <label  class="label-filter">{{ section.settings.filter_lv_2 }}</label>
+                {% endif %}
+              <select class="filter-top tag-select">
+                <option value="" selected>{% if section.settings.content_filter_2 != blank %}{{ section.settings.content_filter_2 }}{% else %}All{% endif %}</option>
+                {% for t in tags %}
+                {% assign tag = t | strip %}    
+                <option value="{{ tag | handle }}">{{ tag }}</option>
+                {% endfor %}
+              </select>
+  
+              {% if section.settings.filter_lv_3 != blank %}
+              <label class="label-filter">{{ section.settings.filter_lv_3 }}</label>
+                {% endif %}
+              {% assign tags = section.settings.tag_lv_3 | split: ',' %}
+              <select class="filter-top tag-select">
+                <option value="" selected>{% if section.settings.content_filter_3 != blank %}{{ section.settings.content_filter_3 }}{% else %}All{% endif %}</option>
+                {% for t in tags %}
+                {% assign tag = t | strip %}
+                <option value="{{ tag | handle }}">{{ tag }}</option>
+                {% endfor %}
+              </select>
+  
+              {% if section.settings.btn_search_filter != blank %}
+                <div class="btn search-filter-button btn-theme">
+                    {{ section.settings.btn_search_filter | upcase }}
+                    {% render 'icon-arrow-2' %}
+                </div>
+              {% endif %}
+  
+            </div>
+          </form>        
+      </div> 
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search filter section",
+  "tag": "section",
+  "class": "section section-search-filter",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "fade-up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fade-down",
+          "label": "Fade Down"
+        },
+        {
+          "value": "fade-left",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fade-right",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fade-up-right",
+          "label": "Fade Up Right"
+        },
+        {
+          "value": "fade-up-left",
+          "label": "Fade Up Left"
+        },
+        {
+          "value": "fade-down-right",
+          "label": "Fade Down Right"
+        },
+        {
+          "value": "fade-down-left",
+          "label": "Fade Down Left"
+        },
+        {
+          "value": "flip-up",
+          "label": "Flip Up"
+        },
+        {
+          "value": "flip-down",
+          "label": "Flip Down"
+        },
+        {
+          "value": "flip-left",
+          "label": "Flip Left"
+        },
+        {
+          "value": "flip-right",
+          "label": "Flip Right"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-down",
+          "label": "Slide Down"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "slide-right",
+          "label": "Slide Right"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        },
+        {
+          "value": "zoom-in-up",
+          "label": "Zoom In Up"
+        },
+        {
+          "value": "zoom-in-down",
+          "label": "Zoom In Down"
+        },
+        {
+          "value": "zoom-in-left",
+          "label": "Zoom In Left"
+        },
+        {
+          "value": "zoom-in-right",
+          "label": "Zoom In Right"
+        },
+        {
+          "value": "zoom-out",
+          "label": "Zoom Out"
+        },
+        {
+          "value": "zoom-out-up",
+          "label": "Zoom Out Up"
+        },
+        {
+          "value": "zoom-out-down",
+          "label": "Zoom Out Down"
+        },
+        {
+          "value": "zoom-out-left",
+          "label": "Zoom Out Feft"
+        },
+        {
+          "value": "zoom-out-right",
+          "label": "Zoom Out Right"
+        }
+      ],
+      "label": "Select Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced Settings"
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "Sub Title Top"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Grid banner"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Search settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_inner",
+      "default": "#fff",
+      "label": "Background inner"
+    },
+    {
+      "type": "color",
+      "id": "color_select",
+      "default": "#666",
+      "label": "Color text"
+    },
+    {
+      "type": "liquid",
+      "id": "collection-title",
+      "label": "Title Filter"
+    },
+    {
+      "type": "header",
+      "content": "List Tag filter"
+    },
+    {
+      "type": "text",
+      "id": "content_filter",
+      "label": "Text Filter"
+    },
+    {
+      "type": "header",
+      "content": "List Tag filter level 1"
+    },
+    {
+      "type": "text",
+      "id": "filter_lv_1",
+      "label": "Title filter level 1"
+    },
+    {
+      "type": "text",
+      "id": "content_filter_1",
+      "label": "Text Filter 1"
+    },
+    {
+      "type": "textarea",
+      "id": "tag_lv_1",
+      "label": "List tag level 1",
+      "info": "Ex: 1 item, 2 item, 3 item..."
+    },
+    {
+      "type": "header",
+      "content": "List Tag level 2"
+    },
+    {
+      "type": "text",
+      "id": "filter_lv_2",
+      "label": "Title filter level 2"
+    },
+    {
+      "type": "text",
+      "id": "content_filter_2",
+      "label": "Text Filter 2"
+    },
+    {
+      "type": "textarea",
+      "id": "tag_lv_2",
+      "label": "List tag level 2",
+      "info": "Ex: 1 item, 2 item, 3 item..."
+    },
+    {
+      "type": "header",
+      "content": "List Tag level 3"
+    },
+    {
+      "type": "text",
+      "id": "filter_lv_3",
+      "label": "Title filter level 3"
+    },
+    {
+      "type": "text",
+      "id": "content_filter_3",
+      "label": "Text Filter 3"
+    },
+    {
+      "type": "textarea",
+      "id": "tag_lv_3",
+      "label": "List tag level 3",
+      "info": "Ex: 1 item, 2 item, 3 item..."
+    },
+    {
+      "type": "liquid",
+      "id": "btn_search_filter",
+      "label": "Text Btn filter"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingtablet",
+      "label": "Padding Section Tablet",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "40px 0px 40px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin "
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "margintablet",
+      "label": "Margin Section Tablet",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ]
+}
+{% endschema %}

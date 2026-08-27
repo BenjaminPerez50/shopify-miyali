@@ -1,0 +1,500 @@
+<!-- image-content-4.liquid -->
+ <style>
+  .customstyle{{ section.id }} .icr-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding: 46px 43px;
+  }
+  .customstyle{{ section.id }} .swiper-pagination {
+    bottom: 43px;
+    right: 0;
+    left: unset;
+    padding: 0 43px;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+  .customstyle{{ section.id }} .swiper-pagination-bullet {
+    opacity: 1;
+  }
+  .customstyle{{ section.id }} .swiper-pagination-bullet-active {
+    background: transparent;
+    border: 2px solid #000;
+    width: 14px;
+    height: 14px;
+  }
+  .customstyle{{ section.id }} .description-1 {
+    font-size: calc(var(--g-font-size) + 2px);
+  }
+  .customstyle{{ section.id }} .description-1 ,
+  .customstyle{{ section.id }} .description-3 {
+    color: var(--g-color-heading);
+  }
+  .customstyle{{ section.id }} .description-3 svg {
+    color: var(--g-main);
+  }
+  @media (min-width: 1200px) {
+    .customstyle{{ section.id }} .image-content_center {
+      padding-right: 52.5px;
+    }
+    .customstyle{{ section.id }} .image-content_right {
+      padding-top: 30px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .customstyle{{ section.id }} .swiper-pagination {
+      bottom: unset;
+      transform: translateY(50%);
+      top: 45%;
+    }
+  }
+  @media (max-width: 767px) {
+    .customstyle{{ section.id }} .swiper-pagination {
+      bottom: 10px;
+      padding-right: 20px;
+    }
+    .customstyle{{ section.id }} .icr-text {
+      padding: 46px 20px;
+      background-color: var(--g-main-2);
+      bottom: 0;
+    }
+    .customstyle{{ section.id }} .image-content__image-wrapper {
+      min-height: 300px;
+    }
+  }
+ </style>
+<div class="customstyle{{ section.id }} img-section" data-aos="{{ section.settings.animation }}">
+    {%- render 'style-section' -%}
+  <div class="{{ section.settings.setwidth }}">
+    <div class="section-block">
+      <div class="row justify-content-between">
+        <div class="image-content_center col-xl-7 col-12 mb-xl-0 mb-4" data-aos="{{ section.settings.animation }}" data-aos-duration="500">
+          <div class="imgcontent-swiper swiper-container swipercol-{{ section.id }}" id="imgcontent-{{ section.id }}"
+            data-section-id="{{ section.id }}"  
+            data-section-type="swipercustom"
+            data-perview-desktop="1"
+            data-perview-tablet="1"
+            data-perview-mobile="1"
+            data-space-between="0">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                <div class="swiper-slide img-sectionright position-relative">
+                  {%- if block.settings.image != blank -%}
+                    <div class="image-content__image-container">
+                        <div class="image-content__image-wrapper" style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                        {% assign img_url = block.settings.image | image_url: width: 1 | replace: 'width=1', 'width={width}' %}
+                        <img class="image-content__image lazyload h-100 object-fit-cover"
+                            src="{{ block.settings.image | image_url: width: 650 }}"
+                            data-src="{{ img_url }}"
+                            data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                            data-sizes="auto"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            loading="lazy"
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}">
+                        </div>
+                    </div>
+                  {%- else -%}
+                    <div class="image-content__image">
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                  {%- endif -%}
+      
+                  {% if block.settings.title != blank or block.settings.description != blank %}
+                  <div class="icr-text">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                      {% if block.settings.description != blank  %}
+                        <div class="rte-setting mb-3" >{{ block.settings.description }}</div>
+                      {% endif %}
+                      {% if  block.settings.title != blank %}
+                        <div class="h4 text-uppercase">{{ block.settings.title }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              {%- endfor -%}
+            </div>
+            {% if section.settings.dots %}
+              <div class="swiper-pagination"></div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="image-content_right col-xl-5 col-12" data-aos="{{ section.settings.animation }}" data-aos-duration="700">
+          <div class="h-100 flex w-100">
+              <div class="flex__item image-content__text text-{{ section.settings.align }} p-xl-0 px-md-3 py-md-0 py-3">
+                {% if section.settings.subtitle != blank %}
+                <div class="mb-30 subtop" >{{ section.settings.subtitle }}</div>
+                {% endif %}
+                {% if  section.settings.title != blank %}
+                <div class="mb-4 {{ section.settings.size_text }}">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.text != blank  %}
+                  <div class="description-1 fw-semibold rte-setting mb-18" >{{ section.settings.text }}</div>
+                {% endif %}
+                {% if section.settings.text_2 != blank  %}
+                  <div class="rte-setting mb-3" >{{ section.settings.text_2 }}</div>
+                {% endif %}
+                {% if section.settings.text_3 != blank  %}
+                  <div class="rte-setting description-3 fw-semibold mb-18 d-flex flex-column" >
+                    {% assign features = section.settings.text_3 | newline_to_br | split: '<br />' %}
+                    {% for feature in features %}
+                      {% unless feature == blank %}
+                        <span style="line-height: 30px;gap: 15px;" class="d-flex align-items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12.5 0C10.875 0 9.125 0 7.5 0C3 0.5 0.5 3 0 7.5C0 9.125 0 10.875 0 12.5C0.5 17 3 19.5 7.5 20C9.125 20 10.875 20 12.5 20C17 19.5 19.5 17 20 12.5C20 10.875 20 9.125 20 7.5C19.5 3 17 0.5 12.5 0ZM14.75 8.375L10.125 13.375C9.625 13.875 8.875 13.875 8.375 13.5L5.5 11C5 10.5 4.875 9.625 5.375 9.125C5.875 8.625 6.625 8.625 7.125 9L9 10.75L12.875 6.625C13.375 6.125 14.125 6.125 14.625 6.625C15.125 7 15.25 7.875 14.75 8.375Z" fill="currentColor"/>
+                          </svg>
+                          {{ feature | strip }}
+                        </span>
+                      {% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                {%- if section.settings.button != blank -%}
+                  <div class="">
+                    <a href="{{ section.settings.link }}" class="btn btn-theme btn-main-2">
+                      {{ section.settings.button }}
+                    </a>
+                  </div>
+                {%- endif -%}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+{% schema %}
+{
+  "name": "Image with text style 4",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "fade-up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fade-down",
+          "label": "Fade Down"
+        },
+        {
+          "value": "fade-left",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fade-right",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fade-up-right",
+          "label": "Fade Up Right"
+        },
+        {
+          "value": "fade-up-left",
+          "label": "Fade Up Left"
+        },
+        {
+          "value": "fade-down-right",
+          "label": "Fade Down Right"
+        },
+        {
+          "value": "fade-down-left",
+          "label": "Fade Down Left"
+        },
+        {
+          "value": "flip-up",
+          "label": "Flip Up"
+        },
+        {
+          "value": "flip-down",
+          "label": "Flip Down"
+        },
+        {
+          "value": "flip-left",
+          "label": "Flip Left"
+        },
+        {
+          "value": "flip-right",
+          "label": "Flip Right"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-down",
+          "label": "Slide Down"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "slide-right",
+          "label": "Slide Right"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        },
+        {
+          "value": "zoom-in-up",
+          "label": "Zoom In Up"
+        },
+        {
+          "value": "zoom-in-down",
+          "label": "Zoom In Down"
+        },
+        {
+          "value": "zoom-in-left",
+          "label": "Zoom In Left"
+        },
+        {
+          "value": "zoom-in-right",
+          "label": "Zoom In Right"
+        },
+        {
+          "value": "zoom-out",
+          "label": "Zoom Out"
+        },
+        {
+          "value": "zoom-out-up",
+          "label": "Zoom Out Up"
+        },
+        {
+          "value": "zoom-out-down",
+          "label": "Zoom Out Down"
+        },
+        {
+          "value": "zoom-out-left",
+          "label": "Zoom Out Feft"
+        },
+        {
+          "value": "zoom-out-right",
+          "label": "Zoom Out Right"
+        }
+      ],
+      "label": "Select Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Block Right"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "liquid",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "size_text",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "label": "Heading Size"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "HTML / Description",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "HTML / Description 2",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "Features for Set 2 (one feature per line)",
+      "default": "3 clients\n60 workout plans\nChat messaging\nVideo conferencing"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button text",
+      "default": "discover now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Optional"
+    },
+    {
+      "type": "header",
+      "content": "Settings Slide Image Left"
+    },
+    {
+      "type": "checkbox",
+      "id": "dots",
+      "label": "Dots",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingtablet",
+      "label": "Padding Section Tablet",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "40px 0px 40px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin "
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "margintablet",
+      "label": "Margin Section Tablet",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image left",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "HTML / Description",
+          "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+        },
+        {
+          "type": "liquid",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text style 4",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+  

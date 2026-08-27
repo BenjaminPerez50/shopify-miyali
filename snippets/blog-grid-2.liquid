@@ -1,0 +1,62 @@
+<!-- blog-grid-2.liquid -->
+
+<div class="blog__item blog__item--2 text-center">
+  {%- if article.image -%}
+  <div class="content-block__image mb-3">
+    <a href="{{ article.url }}">
+        <noscript>
+          {% if article.image %}
+            {{ article.image
+              | image_url: width: 1024
+              | image_tag: alt: article.title }}
+          {% endif %}
+        </noscript>
+
+        <div class="article__photo-container">
+          <div
+            class="article__photo-wrapper"
+            style="padding-top: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+          >
+            <img
+              class="lazyload"
+              src="{%- render 'srcBlank' -%}"
+              data-src="{{ article.image | image_url: width: 2048 }}"
+              data-sizes="auto"
+              data-aspectratio="{{ article.image.aspect_ratio }}"
+              alt="{{ article.title | escape }}"
+            >
+          </div>
+        </div>
+    </a>
+  </div>
+  {%- endif -%}
+  <div class="blog__content">
+    {%- if settings.enable_date -%}
+    <p class="blog__meta mb-2 font-family-2 text-theme">
+      {% comment %}{%- if article.tags.size > 0 -%}
+      {%- for tag in article.tags -%}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="link-body-color">{{ tag }}</a>{% if forloop.last %} - {% else %}, {% endif %}
+      {%- endfor -%}
+      {%- endif -%}{% endcomment %}
+      {{ article.published_at | time_tag: format: 'month_day_year' }}
+    </p>
+  {%- endif -%}
+  <h4 class="blog__title-link mb-3"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+  {%- if settings.enable_short -%}
+  <div class="rte rte--indented-images {% if template contains 'index' %} mb-4 {% else %} mb-5 {% endif %}">
+    {%- if article.excerpt.size > 0 -%}
+    {{ article.excerpt }}
+    {%- else -%}
+      {%- if template contains 'index' -%}
+      <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+      {%- else -%}
+      <p>{{ article.content | strip_html | truncatewords: 20 }}</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+  {%- if settings.enable_btn_blog -%}
+  <a {% if template != 'index' %}style="padding: 8px 24px 8px 24px !important;"{% endif %} class="btn {% if settings.enable_btn_line %} btn-underline {% else %} btn-theme {% endif %} gradient-theme {%- if template contains 'index' -%} mb-0{%- else -%}mb-3{%- endif -%}" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>  
+  {%- endif -%}
+</div>
+</div>

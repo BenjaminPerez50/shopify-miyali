@@ -1,0 +1,283 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-promo": {
+      "type": "main-coupon_code",
+      "disabled": true,
+      "settings": {
+        "coupon_time": 3
+      }
+    },
+    "collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "style_banner": "full",
+        "heading_size": "h2",
+        "img_height": "250px",
+        "bg_color": "#f3f3f3",
+        "image_text_color": "#ffffff",
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 0,
+        "enable_collection": true,
+        "enable_count": true,
+        "link_list_head": ""
+      }
+    },
+    "featured_collections_6_9CCMxK": {
+      "type": "featured-collections-6",
+      "blocks": {
+        "collection_GKTY8K": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        },
+        "collection_4pa4gd": {
+          "type": "collection",
+          "settings": {
+            "collection": "pickleball-balls",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        },
+        "collection_WF8YHG": {
+          "type": "collection",
+          "settings": {
+            "collection": "pickleball-shoes",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        },
+        "collection_tRcH6a": {
+          "type": "collection",
+          "settings": {
+            "collection": "pickleball-eyewear",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        },
+        "collection_pLHnGq": {
+          "type": "collection",
+          "settings": {
+            "collection": "pickleball-apparel",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        },
+        "collection_hLUTWR": {
+          "type": "collection",
+          "settings": {
+            "collection": "pickleball-accessories",
+            "collec_svg": "",
+            "collection_title": "",
+            "description": "",
+            "button_text": "view all shop\n{% render 'icon-arrow-2' %}",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "collection_GKTY8K",
+        "collection_4pa4gd",
+        "collection_WF8YHG",
+        "collection_tRcH6a",
+        "collection_pLHnGq",
+        "collection_hLUTWR"
+      ],
+      "disabled": true,
+      "name": "Collection list text Swiper",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "size_image_col": "auto",
+        "color": "#000000",
+        "bg_overlay": "#222222",
+        "enable_gradient": false,
+        "opacity_overlay": 0,
+        "size_title": "h6",
+        "button_link": "",
+        "button": "All Products",
+        "perviewDesktop": 4,
+        "perviewTablet": 3,
+        "perviewMobile": 1,
+        "spaceBetween": 30,
+        "nowrap": false,
+        "arrows": false,
+        "arrow_heading": false,
+        "scrollbar": false,
+        "show_count": true,
+        "paddingsection": "40px 0px 0px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "40px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "ea7af2bd-7a4c-4129-ae32-bacb42814742": {
+      "type": "featured-collections-3",
+      "blocks": {
+        "collection_qV3MGE": {
+          "type": "collection",
+          "settings": {
+            "collection": "quimicos"
+          }
+        },
+        "collection_YHUexj": {
+          "type": "collection",
+          "settings": {
+            "collection": "motocicletas"
+          }
+        },
+        "collection_cYgnbU": {
+          "type": "collection",
+          "settings": {
+            "collection": "motocicletas"
+          }
+        },
+        "collection_QywHFw": {
+          "type": "collection",
+          "settings": {
+            "collection": "iluminacion"
+          }
+        },
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "suspension-y-direccion"
+          }
+        },
+        "2f3b8aad-10de-480a-a5d8-f03f00650840": {
+          "type": "collection",
+          "settings": {
+            "collection": "accesorios"
+          }
+        },
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "electrico"
+          }
+        },
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "filtros"
+          }
+        },
+        "1e3656fa-e08a-43ca-ab4a-ae2571025870": {
+          "type": "collection",
+          "settings": {
+            "collection": "frenos"
+          }
+        }
+      },
+      "block_order": [
+        "collection_qV3MGE",
+        "collection_YHUexj",
+        "collection_cYgnbU",
+        "collection_QywHFw",
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-0",
+        "2f3b8aad-10de-480a-a5d8-f03f00650840",
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-1",
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-2",
+        "1e3656fa-e08a-43ca-ab4a-ae2571025870"
+      ],
+      "settings": {
+        "animation": "fade-left",
+        "setwidth": "container",
+        "bgsection": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "stylecollection": "button",
+        "size_image_col": "portrait",
+        "color": "#ffffff",
+        "bg_overlay": "#222222",
+        "enable_gradient": false,
+        "opacity_overlay": 0,
+        "size_title": "h5",
+        "button_link": "",
+        "button": "",
+        "perviewDesktop": 5,
+        "perviewTablet": 3,
+        "perviewMobile": 1,
+        "spaceBetween": 30,
+        "nowrap": false,
+        "arrows": false,
+        "scrollbar": false,
+        "paddingsection": "40px 0px 0px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "40px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-template",
+      "settings": {
+        "collection_width": "container",
+        "products_per_page": 12,
+        "collection_perrow": "3",
+        "type_pagination": "pagi",
+        "enable_viewcolumn": true,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "filter_type": "vertical",
+        "first_group": false,
+        "open_group": true,
+        "enable_color": true,
+        "type_color": true,
+        "style_color": "color_grid",
+        "style_size": "grid",
+        "enable_edit_item": false,
+        "select_item": "product-7",
+        "enable_list_collection": false,
+        "link_list_head": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "collection-promo",
+    "collection-banner",
+    "featured_collections_6_9CCMxK",
+    "ea7af2bd-7a4c-4129-ae32-bacb42814742",
+    "product-grid"
+  ]
+}

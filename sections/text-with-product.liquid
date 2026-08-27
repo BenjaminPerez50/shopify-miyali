@@ -1,0 +1,405 @@
+<!-- text-with-product.liquid -->
+<style>
+.twp-product-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+.twp-content.is-sticky {
+    padding: 60px 0 0;
+}
+.customstyle{{ section.id }} .pin-spacer {
+    flex-basis: auto !important;
+}
+@media (min-width: 480px) {
+  .twp-product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
+<div class="customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}" >
+    {%- render 'style-section' -%}
+    <div class="{{ section.settings.setwidth }}">
+
+        <div class="row align-items-start">
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="twp-content">
+                    {%- render 'section-heading' -%}
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-6 col-md-6">
+                <div class="twp-product">
+                    <div class="twp-product-list">
+                        {% for block in section.blocks %}
+                            {% case block.type %}
+                                {%- when 'product' -%}
+                                    {%- assign collection = collections[block.settings.collection] -%}
+                                    {%- assign limit = block.settings.limit -%}
+                                    {%- if collection != blank -%}
+                                        {%- for product in collection.products limit: limit -%}
+                                            <div class="twp-product-item">
+                                                <div class="h-100" style="--g-color-heading : {{ settings.color_body_headings }};--g-color-heading-rgb:{{ settings.color_body_headings.red }}, {{ settings.color_body_headings.green }}, {{ settings.color_body_headings.blue }};
+                                                --color-body-text: {{ settings.color_body_text }};--color-body-text-rgb: {{ settings.color_body_text.red }}, {{ settings.color_body_text.green }}, {{ settings.color_body_text.blue }};">
+                                                    {%- render 'product-card', product: product -%}
+                                                </div>
+                                            </div>
+                                        {%- endfor -%}
+                                    {%- else -%}
+                                        {%- for i in (1..limit) -%}
+                                            <div class="twp-product-item">
+                                                <div>
+                                                    {%- render 'product-grid-blank' -%}
+                                                </div>
+                                            </div>
+                                        {%- endfor -%}
+                                    {%- endif -%}
+
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'gsap.min.js' | asset_url }}" defer="defer"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector(".customstyle{{ section.id }}");
+  if (!section) return;
+
+  const contentCol = section.querySelector(".col-xl-4.col-lg-6.col-md-6");
+  const content = contentCol ? contentCol.querySelector(".twp-content") : null;
+  const banner = section.querySelector(".twp-product");
+
+  if (!content || !banner) return;
+
+  function getPinDistance() {
+    const bannerH = banner.getBoundingClientRect().height;
+    const contentH = content.getBoundingClientRect().height;
+    return Math.max(0, bannerH - contentH);
+  }
+
+  function initPin() {
+    if (window._twbPinTrigger) {
+      window._twbPinTrigger.kill();
+      window._twbPinTrigger = null;
+    }
+
+    if (window.innerWidth < 767) return;
+
+    window._twbPinTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: () => "+=" + getPinDistance(),
+      pin: contentCol,
+      pinSpacing: true,
+      anticipatePin: 1,
+      onEnter: () => content.classList.add("is-sticky"),
+      onLeave: () => content.classList.remove("is-sticky"),
+      onEnterBack: () => content.classList.add("is-sticky"),
+      onLeaveBack: () => content.classList.remove("is-sticky"),
+    });
+  }
+
+  initPin();
+
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+    initPin();
+  });
+
+  let rT;
+  window.addEventListener("resize", () => {
+    clearTimeout(rT);
+    rT = setTimeout(() => {
+      ScrollTrigger.refresh();
+      initPin();
+    }, 150);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Text with Product",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "fade-up",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fade-down",
+          "label": "Fade Down"
+        },
+        {
+          "value": "fade-left",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fade-right",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fade-up-right",
+          "label": "Fade Up Right"
+        },
+        {
+          "value": "fade-up-left",
+          "label": "Fade Up Left"
+        },
+        {
+          "value": "fade-down-right",
+          "label": "Fade Down Right"
+        },
+        {
+          "value": "fade-down-left",
+          "label": "Fade Down Left"
+        },
+        {
+          "value": "flip-up",
+          "label": "Flip Up"
+        },
+        {
+          "value": "flip-down",
+          "label": "Flip Down"
+        },
+        {
+          "value": "flip-left",
+          "label": "Flip Left"
+        },
+        {
+          "value": "flip-right",
+          "label": "Flip Right"
+        },
+        {
+          "value": "slide-up",
+          "label": "Slide Up"
+        },
+        {
+          "value": "slide-down",
+          "label": "Slide Down"
+        },
+        {
+          "value": "slide-left",
+          "label": "Slide Left"
+        },
+        {
+          "value": "slide-right",
+          "label": "Slide Right"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom In"
+        },
+        {
+          "value": "zoom-in-up",
+          "label": "Zoom In Up"
+        },
+        {
+          "value": "zoom-in-down",
+          "label": "Zoom In Down"
+        },
+        {
+          "value": "zoom-in-left",
+          "label": "Zoom In Left"
+        },
+        {
+          "value": "zoom-in-right",
+          "label": "Zoom In Right"
+        },
+        {
+          "value": "zoom-out",
+          "label": "Zoom Out"
+        },
+        {
+          "value": "zoom-out-up",
+          "label": "Zoom Out Up"
+        },
+        {
+          "value": "zoom-out-down",
+          "label": "Zoom Out Down"
+        },
+        {
+          "value": "zoom-out-left",
+          "label": "Zoom Out Feft"
+        },
+        {
+          "value": "zoom-out-right",
+          "label": "Zoom Out Right"
+        }
+      ],
+      "label": "Select Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "Sub Title Top"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Grid banner"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingtablet",
+      "label": "Padding Section Tablet",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "40px 0px 40px 0px",
+      "info": "Padding: Top Right Bottom Left"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin "
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "margintablet",
+      "label": "Margin Section Tablet",
+      "info": "Margin: Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px",
+      "info": "Margin: Top Right Bottom Left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Settings product"
+        },
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        },
+        {
+          "type": "range",
+          "id": "limit",
+          "min": 3,
+          "max": 30,
+          "step": 1,
+          "label": "Limit items",
+          "default": 10
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with product",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

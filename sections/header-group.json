@@ -1,0 +1,386 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement-bar-slide": {
+      "type": "announcement-bar-slide",
+      "blocks": {
+        "a00daf6f-fb1c-4351-80dc-24e405bf630e": {
+          "type": "Item",
+          "disabled": true,
+          "settings": {
+            "code": "We've got you covered with UPF protection.",
+            "button_text": "shop now",
+            "button_link": "shopify://collections"
+          }
+        },
+        "item_gEjp6c": {
+          "type": "Item",
+          "disabled": true,
+          "settings": {
+            "code": "up to 45% off select clothing.",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
+        "item_twGrxT": {
+          "type": "Item",
+          "disabled": true,
+          "settings": {
+            "code": "gear up for summer adventure.",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "a00daf6f-fb1c-4351-80dc-24e405bf630e",
+        "item_gEjp6c",
+        "item_twGrxT"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "animation": "fade",
+        "size_text": "normal",
+        "announ_type": "carousel",
+        "scroll_dot": "dot",
+        "size_icon": 24,
+        "speed": 10,
+        "scroll_type": "from-right",
+        "background": "#7c9d4c",
+        "gradient_bg": "",
+        "text": "#ffffff"
+      }
+    },
+    "scrolling_text_nRCERa": {
+      "type": "scrolling-text",
+      "blocks": {
+        "item_pBDW76": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "code": "up to 30% off everything"
+          }
+        },
+        "item_mwRTMh": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "code": "Register to enjoy 10% off* your first online order"
+          }
+        },
+        "item_MenC8c": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "code": "Promo Text"
+          }
+        },
+        "item_CMJeFr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "code": "free delivery for next 3 orders"
+          }
+        },
+        "item_GM3kfY": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "code": "20% off most loveled - new lines added"
+          }
+        }
+      },
+      "block_order": [
+        "item_pBDW76",
+        "item_mwRTMh",
+        "item_MenC8c",
+        "item_CMJeFr",
+        "item_GM3kfY"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade",
+        "size_text": "subtop",
+        "text_style": "solid",
+        "text_transform": "uppercase",
+        "speed": 10,
+        "scroll_type": "from-right",
+        "background": "#22201d",
+        "gradient_bg": "",
+        "text": "#ffffff",
+        "size_icon": 16,
+        "radius_image": 0,
+        "space_image": "mx-4",
+        "paddingsection": "9px 0px 9px 0px",
+        "paddingtablet": "",
+        "paddingmobile": "9px 0px 9px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_banner_classic_QpbpHq": {
+          "type": "menu-banner-classic",
+          "disabled": true,
+          "settings": {
+            "menu_title": "Home",
+            "menu_width": "container",
+            "menu_column": 6,
+            "enable_menu_banner": true,
+            "image_size": "auto",
+            "menu_banner_width": 100,
+            "menu_banner_html_1": "",
+            "menu_banner_btn_1": "01. Homepage",
+            "menu_banner_link_1": "https://vt-monpicko.myshopify.com/?preview_theme_id=130909765717",
+            "menu_banner_html_2": "",
+            "menu_banner_btn_2": "02. Homepage",
+            "menu_banner_link_2": "https://vt-monpicko.myshopify.com/?preview_theme_id=130909798485",
+            "menu_banner_html_3": "",
+            "menu_banner_btn_3": "03. Homepage",
+            "menu_banner_link_3": "https://vt-monpicko.myshopify.com/?preview_theme_id=130909831253",
+            "menu_banner_html_4": "",
+            "menu_banner_btn_4": "04. Homepage",
+            "menu_banner_link_4": "https://vt-monpicko.myshopify.com/?preview_theme_id=130909896789",
+            "menu_banner_html_5": "",
+            "menu_banner_btn_5": "05. Homepage",
+            "menu_banner_link_5": "https://vt-olight.myshopify.com/?preview_theme_id=179015876922",
+            "menu_banner_html_6": "",
+            "menu_banner_btn_6": "06. Homepage",
+            "menu_banner_link_6": "https://vt-olight.myshopify.com/?preview_theme_id=179015909690",
+            "menu_banner_html_7": "",
+            "menu_banner_btn_7": "07. Homepage",
+            "menu_banner_link_7": "https://vt-sunic.myshopify.com/?preview_theme_id=138693312697",
+            "menu_banner_html_8": "",
+            "menu_banner_btn_8": "08. Homepage",
+            "menu_banner_link_8": "https://vt-sunic.myshopify.com/?preview_theme_id=138693378233",
+            "menu_banner_html_9": "",
+            "menu_banner_btn_9": "09. Homepage",
+            "menu_banner_link_9": "https://vt-sunic.myshopify.com/?preview_theme_id=138693411001"
+          }
+        },
+        "menu_collection_LdDdz9": {
+          "type": "menu-collection",
+          "settings": {
+            "menu_title": "Shop",
+            "menu_width": "container",
+            "menu_column": 3,
+            "enable_menu_collection": true,
+            "enable_items_count": true,
+            "image_size": "auto",
+            "menu_collection_width": 50,
+            "menu_collection_1": "suspension-y-direccion",
+            "menu_collection_2": "quimicos",
+            "menu_collection_3": "accesorios",
+            "menu_collection_4": "electrico",
+            "menu_collection_5": "",
+            "menu_collection_6": ""
+          }
+        },
+        "9d3d821c-82a9-439a-b2db-6700a3c6685f": {
+          "type": "menu-product",
+          "settings": {
+            "menu_title": "products",
+            "menu_width": "container",
+            "menu_column": 4,
+            "enable_menu_product": true,
+            "menu_product_width": 20,
+            "menu_product_1": "awe-tuning®-0fg™-304-ss-cat-back-exhaust-system-with-single-rear-exit",
+            "menu_product_2": "",
+            "menu_product_3": "",
+            "menu_product_4": "",
+            "menu_product_5": "",
+            "menu_product_6": ""
+          }
+        },
+        "0f4d122e-cf9d-4fbf-8082-85a6cb05155f": {
+          "type": "menu-banner",
+          "settings": {
+            "menu_title": "pages",
+            "menu_width": "container",
+            "menu_column": 2,
+            "enable_menu_banner": true,
+            "menu_banner_width": 70,
+            "menu_banner_height": 300,
+            "menu_banner_size_title": "h4",
+            "menu_banner_position_text_1": "bot-left",
+            "menu_banner_subheading_1": "All Styles",
+            "menu_banner_heading_1": "Min. 65% Off",
+            "menu_banner_paragraph_1": "",
+            "menu_banner_btn_1": "Discover now",
+            "menu_banner_link_1": "shopify://collections",
+            "menu_banner_position_text_2": "bot-left",
+            "menu_banner_subheading_2": "Lingerie",
+            "menu_banner_heading_2": "Flat 50% Off",
+            "menu_banner_paragraph_2": "",
+            "menu_banner_btn_2": "Discover now",
+            "menu_banner_link_2": "shopify://collections",
+            "menu_banner_position_text_3": "bot-left",
+            "menu_banner_subheading_3": "Best-selling",
+            "menu_banner_heading_3": "New Arrivals",
+            "menu_banner_paragraph_3": "",
+            "menu_banner_btn_3": "Discover now",
+            "menu_banner_link_3": "shopify://collections"
+          }
+        },
+        "96e8331c-f8e4-4b9d-802b-4a659893f052": {
+          "type": "menu-banner-classic",
+          "settings": {
+            "menu_title": "blog",
+            "menu_width": "container",
+            "menu_column": 3,
+            "enable_menu_banner": true,
+            "image_size": "wide",
+            "menu_banner_width": 30,
+            "menu_banner_html_1": "<h5 class=\"mb-0\">Flat 50% Off</h5>\n<p>Our products are designed for everyone.</p>",
+            "menu_banner_btn_1": "Shop now",
+            "menu_banner_link_1": "shopify://collections",
+            "menu_banner_html_2": "<h5 class=\"mb-0\">Flat 50% Off</h5>\n<p>sss</p>",
+            "menu_banner_btn_2": "",
+            "menu_banner_link_2": "",
+            "menu_banner_html_3": "",
+            "menu_banner_btn_3": "",
+            "menu_banner_link_3": "",
+            "menu_banner_html_4": "",
+            "menu_banner_btn_4": "",
+            "menu_banner_link_4": "",
+            "menu_banner_html_5": "",
+            "menu_banner_btn_5": "",
+            "menu_banner_link_5": "",
+            "menu_banner_html_6": "",
+            "menu_banner_btn_6": "",
+            "menu_banner_link_6": "",
+            "menu_banner_html_7": "",
+            "menu_banner_btn_7": "",
+            "menu_banner_link_7": "",
+            "menu_banner_html_8": "",
+            "menu_banner_btn_8": "",
+            "menu_banner_link_8": "",
+            "menu_banner_html_9": "",
+            "menu_banner_btn_9": "",
+            "menu_banner_link_9": ""
+          }
+        },
+        "topbar_DLyJGM": {
+          "type": "topbar",
+          "settings": {
+            "text_topbar_left": "Hola, Bienvenidos a Miyali Autopartes",
+            "text_topbar": "",
+            "link_list": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_banner_classic_QpbpHq",
+        "menu_collection_LdDdz9",
+        "9d3d821c-82a9-439a-b2db-6700a3c6685f",
+        "0f4d122e-cf9d-4fbf-8082-85a6cb05155f",
+        "96e8331c-f8e4-4b9d-802b-4a659893f052",
+        "topbar_DLyJGM"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/logo-shopify.png",
+        "logo_max_width": 188,
+        "enable_transparent": false,
+        "hover_transparent": false,
+        "enable_white": false,
+        "show_menucategories": true,
+        "setwidth": "container",
+        "layout_header": "logo-center-navigation-center",
+        "type_sticky": "none",
+        "height_header": "normal",
+        "topbarbg": "#f5f5f5",
+        "topborderbg": "rgba(0,0,0,0)",
+        "textcolor-top": "#555555",
+        "background": "#ffffff",
+        "textcolor": "#000000",
+        "linkcolor": "#000000",
+        "linkhover": "#4158f2",
+        "color_search": "#999999",
+        "color_icon_search": "#000000",
+        "bg_search": "#f5f5f5",
+        "menutext": "#000000",
+        "menutexthover": "#f24141",
+        "menudroptexttitle": "#000000",
+        "menudroptext": "#524e4d",
+        "menudropbg": "#ffffff",
+        "menudropborder": "#f1f1f1",
+        "main_linklist": "navegaci-n",
+        "menu_categories": "",
+        "font_family_menu": "--g-font-1",
+        "font_sizemenu": "14px",
+        "font_weight": "900",
+        "menu_spacing": 0,
+        "type_menu": "uppercase",
+        "menu_active": "thin-line",
+        "menu_label_text": "#ffffff",
+        "menu_label_new": "#01bad4",
+        "menu_label_hot": "#d24418",
+        "menu_label_sale": "#ffa800",
+        "menu_label_other": "#848484",
+        "link_list_search": "",
+        "sidebar_search": true,
+        "e_hd_currency": true,
+        "enable_image": false,
+        "enable_name": false,
+        "enable_language_selector": true,
+        "icon_cart": "icon",
+        "svg_cart": "cart-1",
+        "icon_wishlist": "icon",
+        "icon_login": "icon",
+        "e_link_login": "link",
+        "icon_search": "icon-text",
+        "show_humbergerbar": false,
+        "bg_humberger": "#ffffff",
+        "color_humberger_text": "#22201d",
+        "content_1": "<sp style=\"\n    padding: 0 12.5px;\n    font-size: 12px;\n    line-height: 20px;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\" style=\"\n    width: 22px;\n    height: 22px;\n\">\n<path d=\"M22 11V18.7C22 20.4575 20.6262 21.8941 18.8939 21.9944L18.7 22H15.4C14.8359 22 14.3709 21.5754 14.3074 21.0283L14.3 20.9V14.3C14.3 13.7359 14.7246 13.2709 15.2717 13.2074L15.4 13.2H20.35V11C20.35 5.83614 16.1638 1.65 11 1.65C5.83614 1.65 1.65 5.83614 1.65 11V13.2H6.6C7.20751 13.2 7.7 13.6925 7.7 14.3V20.9C7.7 21.5075 7.20751 22 6.6 22H3.3C1.47747 22 0 20.5226 0 18.7V11C0 4.92487 4.92487 0 11 0C17.0751 0 22 4.92487 22 11ZM6.05 14.85H1.65V18.7C1.65 19.6112 2.38873 20.35 3.3 20.35H6.05V14.85ZM20.35 14.85H15.95V20.35H18.7C19.5577 20.35 20.2624 19.6956 20.3424 18.859L20.35 18.7V14.85Z\" fill=\"black\"></path>\n</svg>\n<sp style=\"color: #555;\">\nHelp Center\n</sp>\n</sp>"
+      }
+    },
+    "store-messages": {
+      "type": "store-messages",
+      "blocks": {
+        "118ade0e-615d-4bf4-83b4-e6bf6f2a6549": {
+          "type": "Item",
+          "settings": {
+            "code": "Our '22 Lookbook is live",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "118ade0e-615d-4bf4-83b4-e6bf6f2a6549"
+      ],
+      "settings": {
+        "enable": false,
+        "enable_homepage": false,
+        "background": "#36382d",
+        "gradient_bg": "",
+        "text": "#ffffff",
+        "paddingsection": "8px 0px 8px 0px",
+        "paddingmobile": "8px 0px 8px 0px",
+        "marginsection": "0px 0px 30px 0px",
+        "margintablet": "",
+        "marginmobile": "0px 0px 20px 0px"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar-slide",
+    "scrolling_text_nRCERa",
+    "header",
+    "store-messages"
+  ]
+}
