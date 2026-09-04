@@ -47,7 +47,6 @@
         "item_gEjp6c",
         "item_twGrxT"
       ],
-      "disabled": true,
       "settings": {
         "enable": true,
         "animation": "fade",
@@ -135,7 +134,6 @@
       "blocks": {
         "menu_banner_classic_QpbpHq": {
           "type": "menu-banner-classic",
-          "disabled": true,
           "settings": {
             "menu_title": "Home",
             "menu_width": "container",

@@ -19,7 +19,7 @@
             "border_width": "",
             "bgblock": "#ffffff",
             "title": "Productos",
-            "description": "EL mejor surtido",
+            "description": "+5,000 referencias",
             "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/piezas-de-automovil.jpg?v=1785540021\">"
           }
         },
@@ -30,7 +30,7 @@
             "border_width": "",
             "bgblock": "#ffffff",
             "title": "Costo-Beneficio",
-            "description": "Los mejores precios",
+            "description": "Sin intermediarios",
             "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/dollar.jpg?v=1785540951\">"
           }
         },
@@ -41,7 +41,7 @@
             "border_width": "",
             "bgblock": "#ffffff",
             "title": "Marcas",
-            "description": "Amplia variedad",
+            "description": "Marcas líderes",
             "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/engrane.jpg?v=1785542782\">"
           }
         },
@@ -52,7 +52,7 @@
             "border_width": "",
             "bgblock": "#ffffff",
             "title": "Atención",
-            "description": "El cliente es primero",
+            "description": "Asesoría personalizada",
             "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/servicio-al-cliente.jpg?v=1785541151\">"
           }
         },
@@ -63,7 +63,7 @@
             "border_width": "",
             "bgblock": "#ffffff",
             "title": "Calidad",
-            "description": "Los mejores productos",
+            "description": "Con garantía",
             "icon": "<img src=\"https://cdn.shopify.com/s/files/1/0865/8183/8017/files/insignia-de-la-cinta.jpg?v=1785454047%0A>\">"
           }
         }
@@ -159,7 +159,7 @@
       ],
       "name": "Grid banner",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-right",
         "setwidth": "container",
         "bgsection": "#ffffff",
         "title_top": "",
@@ -303,7 +303,7 @@
       ],
       "name": "Product tab swiper",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-right",
         "setwidth": "container",
         "bgsection": "#f5f5f5",
         "title": "body & trim",
@@ -312,12 +312,12 @@
         "style_btn": "btn-underline",
         "style_tab": "line",
         "banner_right": false,
-        "subtitle_banner": "get extra 10% off",
+        "subtitle_banner": "Enviamos a todo México",
         "color_sub": "#ffc122",
-        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nworldwide\n</sp>\ndelivery",
+        "title_banner": "Envío Rápido y Seguro",
         "color_title": "#ffffff",
         "size_text": "h3",
-        "button": "shop now",
+        "button": "Ver Productos",
         "link": "shopify://collections/all",
         "style_btn_banner": "btn-underline btn-underline-white",
         "limit": 10,
@@ -368,7 +368,7 @@
       ],
       "name": "Product tab swiper",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-left",
         "setwidth": "container",
         "bgsection": "#f5f5f5",
         "title": "electrical parts",
@@ -377,12 +377,12 @@
         "style_btn": "btn-underline",
         "style_tab": "line",
         "banner_right": true,
-        "subtitle_banner": "find parts",
+        "subtitle_banner": "ENCUENTRA TU PIEZA",
         "color_sub": "#f14141",
-        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nbig brands\n</sp>\nhot price",
+        "title_banner": "GRANDES MARCAS MEJOR PRECIO",
         "color_title": "#ffffff",
         "size_text": "h3",
-        "button": "shop now",
+        "button": "Ver Productos",
         "link": "shopify://collections/all",
         "style_btn_banner": "btn-underline btn-underline-white",
         "limit": 10,
@@ -433,7 +433,7 @@
       ],
       "name": "Product tab swiper",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-right",
         "setwidth": "container",
         "bgsection": "#f5f5f5",
         "title": "cooling & heating",
@@ -442,12 +442,12 @@
         "style_btn": "btn-underline",
         "style_tab": "line",
         "banner_right": false,
-        "subtitle_banner": "quality products",
+        "subtitle_banner": "PRODUCTOS DE CALIDAD",
         "color_sub": "#4158f2",
-        "title_banner": "<sp style=\"\n    font-weight: 500;\n    display: block;\n\">\nshop with\n</sp>\nconfidence",
+        "title_banner": "COMPRA CON CONFIANZA",
         "color_title": "#ffffff",
         "size_text": "h3",
-        "button": "shop now",
+        "button": "Ver Productos",
         "link": "shopify://collections/all",
         "style_btn_banner": "btn-underline btn-underline-white",
         "limit": 10,
@@ -472,13 +472,13 @@
         "paragraph_gariyx": {
           "type": "paragraph",
           "settings": {
-            "subtext": "<h4 style=\"\n    text-transform: uppercase;\n\">\nUnete con \n<sp style=\"color: var(--g-main-2)\">\nWhat's App o correo electrónico\n</sp>\n y obtén descuentos\n</h4>"
+            "subtext": "<h4 style=\"\n    text-transform: uppercase;\n\">\nÚNETE CON \n<sp style=\"color: var(--g-main-2)\">\nWhatsApp O CORREO ELECTRÓNICO\n</sp>\n Y OBTÉN DESCUENTOS\n</h4>"
           }
         },
         "button_NqDTDL": {
           "type": "button",
           "settings": {
-            "button": "Unirme >",
+            "button": "SUSCRIBIRME",
             "link": "#",
             "style_btn": "btn-theme"
           }
@@ -540,10 +540,10 @@
             "sub_title_block": "",
             "title_block": "",
             "promo_banner_height": 440,
-            "promo_subheading": "brake system",
-            "promo_heading": "<sp>\nfor safe \n<br>\ndriving\n</sp>",
+            "promo_subheading": "SISTEMA DE FRENOS",
+            "promo_heading": "PARA MANEJAR SEGURO",
             "promo_paragraph": "From \n<strong style=\"\n    font-size: 24px;\n    line-height: 20px;\n    font-weight: 900;\n    color: var(--g-main-2);\n\">\n$199.99\n</strong>",
-            "promo_btn": "shop now",
+            "promo_btn": "VER AHORA",
             "promo_link": "",
             "promo_color": "#ffffff",
             "promo_size_title": "h3",
@@ -581,7 +581,7 @@
       ],
       "name": "Advanced Content",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-right",
         "setwidth": "container",
         "text_color": "rgba(0,0,0,0)",
         "bgsection": "#f5f5f5",
@@ -697,7 +697,7 @@
       ],
       "name": "Logo swiper",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-left",
         "setwidth": "container",
         "bgsection": "#f5f5f5",
         "title_top": "",
@@ -736,7 +736,7 @@
             "subtitle": "<sp class=\"fw-medium\">\n¿Quienes somos?\n</sp>",
             "title": "<sp style=\"text-transform:none;\">\nMiyali Autopartes,\n<br>\nDistribuidor lider en refacciones.\n</sp>",
             "size_text": "h3",
-            "description": "<p>Somos un distribuidor mayorista de autopartes,\n<br>\natendemos reaccionarias y distribuidores.\n<br></p>\n<p>Contamos con una amplia gama de marcas\n<br>\ny productos de la mas alta calidad a \n<br>\nprecios competitivos, siempre garantizando\n<br>\nun extenso surtido donde encontrara lo que necesite.\n</p>\n<sp style=\"\n    align-items: center;\n    display: flex;\n    flex-wrap: wrap;\n    gap: 20px 60px;\n    margin-top: 11px;\n\">\n<sp style=\"\n    flex: 0 1 auto;\n\">\n<sp class=\"h1 d-block\" style=\"\n    color: var(--g-main-2);\n\">\n98%\n</sp>\n<sp style=\"font-weight: 800;color: #000;\">\nEl en el surtido de su\n<br>\npedido solicitado.\n</sp>\n</sp>\n<sp style=\"\n    flex: 0 1 auto;\n\">\n<sp class=\"h6 d-block\">\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" style=\"\n    width: 20px;\n    height: 20px;\n    margin-right: 5px;\n    vertical-align: -4px;\n\">\n<path d=\"M12.5 0C10.875 0 9.125 0 7.5 0C3 0.5 0.5 3 0 7.5C0 9.125 0 10.875 0 12.5C0.5 17 3 19.5 7.5 20C9.125 20 10.875 20 12.5 20C17 19.5 19.5 17 20 12.5C20 10.875 20 9.125 20 7.5C19.5 3 17 0.5 12.5 0ZM14.75 8.375L10.125 13.375C9.625 13.875 8.875 13.875 8.375 13.5L5.5 11C5 10.5 4.875 9.625 5.375 9.125C5.875 8.625 6.625 8.625 7.125 9L9 10.75L12.875 6.625C13.375 6.125 14.125 6.125 14.625 6.625C15.125 7 15.25 7.875 14.75 8.375Z\" fill=\"#4158F2\"></path>\n</svg>\nExelente servicio\n</sp>\nSu comodidad y preferencia\n<br>\n es nuestra meta.\n</sp>\n</sp>",
+            "description": "<p>Somos un distribuidor mayorista de autopartes,<br>atendemos refaccionarias y distribuidores.<br></p><p>Contamos con una amplia gama de marcas<br>y productos de la más alta calidad a<br>precios competitivos, siempre garantizando<br>un extenso surtido donde encontrará lo que necesite.</p><sp style=\"align-items: center; display: flex; flex-wrap: wrap; gap: 20px 60px; margin-top: 11px;\"><sp style=\"flex: 0 1 auto;\"><sp class=\"h1 d-block\" style=\"color: var(--g-main-2);\">98%</sp><sp style=\"font-weight: 800;color: #000;\">En el surtido de tu<br>pedido solicitado.</sp></sp><sp style=\"flex: 0 1 auto;\"><sp class=\"h6 d-block\">Excelente Servicio</sp></sp></sp>",
             "style_btn": "btn-underline btn-underline-white",
             "size_btn": "",
             "button_text": "",
@@ -766,7 +766,7 @@
       ],
       "name": "Advanced Content",
       "settings": {
-        "animation": "fade",
+        "animation": "fade-right",
         "setwidth": "container",
         "text_color": "rgba(0,0,0,0)",
         "bgsection": "#f5f5f5",
@@ -776,8 +776,8 @@
         "e_repeat": "no-repeat",
         "e_position": "center center",
         "zindex": "0",
-        "title_top": "",
-        "title": "",
+        "title_top": "¿Quiénes Somos?",
+        "title": "Miyali Autopartes, Distribuidor líder en refacciones.",
         "des": "",
         "align-heading": "center",
         "padding_column": "0",
